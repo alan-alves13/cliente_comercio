@@ -1,0 +1,43 @@
+<form [formGroup]="crudForm">
+    <table>
+        <tr>
+            <td>ID: </td>
+            <td>{{ id }}</td>
+        </tr>
+        <tr>
+            <td>Nome: </td>
+            <td><input type="text" pInputText formControlName="nome"/></td>
+        </tr>
+        <tr>
+            <td>Preco: </td>
+            <td>
+                <p-inputNumber formControlName="preco"></p-inputNumber>
+            </td>
+        </tr>
+        <tr>
+            <td>Quantidade:</td>
+            <td>
+                <p-inputNumber formControlName="quantidade_estoque"></p-inputNumber>
+            </td>
+        </tr>
+        <tr>
+            <td>Descricao:</td>
+            <td>
+                <input type="text" formControlName="descricao"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><hr /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <button pButton pRipple type="button" label="Salvar" (clic)="salvar()"></button>
+                <button pButton routerLink="/produtoslistagem" style="margin-left:5px;" type="button"
+                label="Cancelar" class="p-button-secondary"></button>
+                <button pButton type="button" label="Apagar" (click)="deletar()" class="p-button-danger"
+                style="margin-left: 5px;"></button>
+            </td>
+        </tr>
+    </table>
+</form>
