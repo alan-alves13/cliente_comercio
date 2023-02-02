@@ -14,6 +14,7 @@ export class ProdutoDetalhesComponent implements OnInit {
   
   id?: number;
   isNew = true;
+  
   crudForm: FormGroup = this.formBuilder.group({
     id: [0],
     nome: ['', Validators.required],
@@ -22,15 +23,15 @@ export class ProdutoDetalhesComponent implements OnInit {
     categoria: [0, Validators.required],
     descricao: ['', Validators.required]
    
-  });
+  })
   
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
     private service: ServicoService, private router: Router){}
     
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id')? parseInt(this.route.snapshot.paramMap.get('id')!) : 0;
-    
-    if (this.id > 0){
+    this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
+
+    if(this.id>0){
       this.isNew = false;
       this.service.getProdutoByID(this.id).subscribe({
        next: (produto: Produto) => this.crudForm.setValue(produto),
@@ -56,7 +57,7 @@ export class ProdutoDetalhesComponent implements OnInit {
       this.service.updateProduto(this.crudForm.value).subscribe({
         next: (produto: Produto) => {
             console.log(produto);
-            this.router.navigate(['/produtoslistagem'])
+            this.router.navigate(['/produtoslistagem']);
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')
