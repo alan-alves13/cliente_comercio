@@ -1,0 +1,40 @@
+<form [formGroup]="crudForm">
+    <table>
+        <tr>
+            <td>Nome: </td>
+            <td><input type="text" pInputText formControlName="nome"/></td>
+        </tr>
+        <tr>
+            <td>CPF: </td>
+            <td>
+                <p-inputNumber formControlName="cpf"></p-inputNumber>
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>
+                <input type="text" formControlName="email">
+            </td>
+        </tr>
+        <tr>
+            <td>Senha:</td>
+            <td>
+                <input type="text" formControlName="senha"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Data de Nascimento:</td>
+            <td>
+                <input type="text" formControlName="data_nascimento"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="text-align:center;padding-top:3%;">
+                <button class="button-cad" pButton pRipple type="button" label="Cadastrar" (click)="salvar()"></button>
+                <button class="button-cad" pButton routerLink="/index" type="button" label="Voltar"></button>
+
+            </td>
+        </tr>
+    </table>
+</form>

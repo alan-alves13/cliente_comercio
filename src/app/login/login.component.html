@@ -1,0 +1,32 @@
+
+    <div class="body">
+    <form [formGroup]="crudForm">
+        <table>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="text" formControlName="email">
+                </td>
+            </tr>
+            <tr>
+                <td>Senha:</td>
+                <td>
+                    <input type="text" formControlName="senha"/>
+                </td>
+            </tr>
+            <label style="font-size:17px;"> Não possui cadastro?</label>
+            <button class="button-cad" pButton routerLink="/usuario-cadastro" type="button" label="Cadastrar"></button>
+            <tr>
+                <td colspan="2" style="text-align:center;margin-top:3%;">
+                    <button class="button-log" pButton pRipple type="button" label="Entrar" (click)="entrar()"></button>
+                    <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    
+    
+    <router-outlet></router-outlet>
+    
+

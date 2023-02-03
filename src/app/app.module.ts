@@ -13,12 +13,18 @@ import {ButtonModule} from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from "@angular/forms";
 import {InputNumberModule} from 'primeng/inputnumber';
+import { UsuarioCadastroComponent } from './usuario-cadastro/usuario-cadastro.component';
+import { IndexComponent } from './index/index.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProdutoListagemComponent,
-    ProdutoDetalhesComponent
+    ProdutoDetalhesComponent,
+    UsuarioCadastroComponent,
+    IndexComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
