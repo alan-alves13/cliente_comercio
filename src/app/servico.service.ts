@@ -12,18 +12,24 @@ export class ServicoService {
   constructor(private http: HttpClient ) { }
 
 
-  getProduto(): Observable<Produto[]>{
+ /* getProduto(): Observable<Produto[]>{
 
     //Recuperar o token da API
-
+  
     return this.http.get<Produto[]>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/',{headers: new HttpHeaders(
       {
-        'Authorization': 'Bearer' + 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InFWOFFUN2JwN1hnMW9xRTZ0ZUlnZyJ9.eyJpc3MiOiJodHRwczovL2Rldi0zdXF1c3J1aXRzaWducnJlLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJZcnpoYnhnd3BlcG1KQ1AwUFZCbkRPTE1aSzJuSHUycUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9hdXRoMC1qd3QtYXV0aG9yaXplciIsImlhdCI6MTY3NTQyOTM0OCwiZXhwIjoxNjc3MjkzMzQ4LCJhenAiOiJZcnpoYnhnd3BlcG1KQ1AwUFZCbkRPTE1aSzJuSHUycSIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.kaOsJajnvbmRo-6okMSnSM9KBVuWf69x8PxopOR1JaZJZIdR65sMBpJMkNDT8yk5xxWLZn0bCztX51Zh3iRZPA1ZGxo1jv9HfTH6PrNJeBo3dx3w8H6pFWi3zFxIxVukZ1lOXLtgJOOIJlOqE2XetHS5apboYkZvnzlr7XAqeMMTzsXC1h95i-uAYv1_uk_oh4jH03XtLjqIVGWYbvtBYfMajAs_YRqGxS0gxKkU7CCKbcL69cXPBbQjtCGYFbeNjNipXl7k_F9G_Gy9S_Bc9yMQQWENH0o2tgqJ0h6aaNqt8PTAWmo-QMgaRZ2lPOq7GBHh-1AhKQ3E5eOk9f3xGw',
+        'Authorization': 'Bearer' + 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InFWOFFUN2JwN1hnMW9xRTZ0ZUlnZyJ9.eyJpc3MiOiJodHRwczovL2Rldi0zdXF1c3J1aXRzaWducnJlLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJZcnpoYnhnd3BlcG1KQ1AwUFZCbkRPTE1aSzJuSHUycUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9hdXRoMC1qd3QtYXV0aG9yaXplciIsImlhdCI6MTY3NTQzMTc5NSwiZXhwIjoxNjc3Mjk1Nzk1LCJhenAiOiJZcnpoYnhnd3BlcG1KQ1AwUFZCbkRPTE1aSzJuSHUycSIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.u9Kq3YTNGBwnJgLP5x4TvPeJER21T4fLMBsPm377ExZ6ibx3ZQaMinDT6q9ejpeqvcvgZZYo8aCDhz_2V9kAOascdPf0-VAUb5XkKuguOsNI6U48i3RvWPIb-V_cGbgdAYwZ7fihEPVI__pvb0zPOQdP3A5uVvI1xZccGovTBXH0ImeCngrGqm0a-PQg2Wv9EXLE-X63xXxPZ0LNLXikUEcfYJEgBZY8kPfONb7So07G-Dw8tSyzwd5wZ5H2Yrjo7RWli_jlAoHZXZiNXKDfzZ5UXIYgGQZFMkKd-5s_X4FjFxe9Djqo4eRenguKqVZ-nB9B1Ubo7C0Gn-UKCNuDfA',
          'Content-Type': 'application/json'
             })});
     //return this.http.get<Produto[]>('http://localhost:3000/produtos');
 
+  } */
+  getProduto(): Observable<Produto[]>{
+        return this.http.get<Produto[]>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/');
   }
+  
+
+
   getProdutoByID(id: number): Observable<Produto>{
    // const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${id}`;
     const url = `http://localhost:3000/produtos/${id}`;
@@ -38,8 +44,8 @@ export class ServicoService {
   }
 
   updateProduto(produto: Produto): Observable<Produto>{
-   // const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${produto.id}`;
-     const url = `http://localhost:3000/produtos/${produto.id}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${produto.id}`;
+   //  const url = `http://localhost:3000/produtos/${produto.id}`;
 
    return this.http.put<Produto>(url, produto);
   }
