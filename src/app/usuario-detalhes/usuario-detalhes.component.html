@@ -1,9 +1,7 @@
 <div class="body">
-    <form [formGroup]="crudForm">
-        <h1> Faça seu Cadastro</h1>
+    <form>
+        <h1>Edite seu perfil</h1>
             <br/>
-            <label> Já possui cadastro?</label>
-            <button class="button-cad" pButton routerLink="/login" type="button" label="Login"></button>
             <br/>
             <label>Nome: </label>
             <input type="text" pInputText formControlName="nome"/>
@@ -21,7 +19,8 @@
             <input type="date" formControlName="data_nascimento"/>
 
             <div style="text-align:center;padding-top:1%;">
-                <button class="button-log" pButton pRipple type="button" label="Cadastrar" (click)="salvar()"></button>
+                <button class="button-log" pButton pRipple type="button" label="Salvar"></button>
+                <button class="button-log" pButton pRipple type="button" label="Apagar"></button>
                 <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
             </div>
     </form>

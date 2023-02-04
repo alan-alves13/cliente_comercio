@@ -16,6 +16,12 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { UsuarioCadastroComponent } from './usuario-cadastro/usuario-cadastro.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { MenuClienteComponent } from './menu-cliente/menu-cliente.component';
+import { UsuarioDetalhesComponent } from './usuario-detalhes/usuario-detalhes.component';
+import { PedidosDetalhesComponent } from './pedidos-detalhes/pedidos-detalhes.component';
+import { PedidosListagemComponent } from './pedidos-listagem/pedidos-listagem.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +30,12 @@ import { LoginComponent } from './login/login.component';
     ProdutoDetalhesComponent,
     UsuarioCadastroComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    MenuAdminComponent,
+    MenuClienteComponent,
+    UsuarioDetalhesComponent,
+    PedidosDetalhesComponent,
+    PedidosListagemComponent
   ],
   imports: [
     BrowserModule,

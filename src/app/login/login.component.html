@@ -1,32 +1,28 @@
-
-    <div class="body">
-    <form [formGroup]="crudForm">
-        <table>
-            <tr>
-                <td>Email:</td>
-                <td>
-                    <input type="text" formControlName="email">
-                </td>
-            </tr>
-            <tr>
-                <td>Senha:</td>
-                <td>
-                    <input type="text" formControlName="senha"/>
-                </td>
-            </tr>
-            <label style="font-size:17px;"> Não possui cadastro?</label>
+   
+   <div class="body">
+        <h1> Faça seu login</h1>
+        <br/>
+            <label> Não possui cadastro?</label>
             <button class="button-cad" pButton routerLink="/usuario-cadastro" type="button" label="Cadastrar"></button>
-            <tr>
-                <td colspan="2" style="text-align:center;margin-top:3%;">
-                    <button class="button-log" pButton pRipple type="button" label="Entrar" (click)="entrar()"></button>
-                    <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
-                </td>
-            </tr>
-        </table>
-    </form>
+        <div class="form">
+            <form [formGroup]="crudForm">  
+                <label>Email:</label>
+                <input type="text" formControlName="email">
+                <br/>
+                <div style="margin:15px">
+                    <label> Senha:</label>
+                    <input type="text" formControlName="senha"/>
+                </div>
+                <div style="text-align:center;margin-top:3%;">
+                        <button class="button-log" pButton pRipple type="button" routerLink="/menu-cliente" label="Entrar" (click)="entrar()"></button>
+                        <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
+                </div>          
+            </form>
+        </div>
     </div>
-    
-    
-    <router-outlet></router-outlet>
+<div class="footer">
+    Contato: (84) 321544565
+    Endereço: 
+</div>
     
 
