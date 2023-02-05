@@ -10,6 +10,8 @@ import { MenuClienteComponent } from './menu-cliente/menu-cliente.component';
 import { UsuarioDetalhesComponent } from './usuario-detalhes/usuario-detalhes.component';
 import { PedidosListagemComponent } from './pedidos-listagem/pedidos-listagem.component';
 import { PedidosDetalhesComponent } from './pedidos-detalhes/pedidos-detalhes.component';
+import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem.component';
+import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
 
 const routes: Routes = [
   {path: 'produtoslistagem', component: ProdutoListagemComponent},
@@ -23,6 +25,8 @@ const routes: Routes = [
   {path: 'usuario-detalhes', component: UsuarioDetalhesComponent},
   {path: 'pedidos-listagem', component: PedidosListagemComponent},
   {path: 'pedidos-detalhes', component: PedidosDetalhesComponent},
+  {path: 'usuarios-listagem', component: UsuariosListagemComponent},
+  {path: 'produto-cadastro', component: ProdutoCadastroComponent},
   {path: '', redirectTo: '/index', pathMatch: 'full'}
 
 ];

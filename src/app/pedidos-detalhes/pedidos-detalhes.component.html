@@ -1,1 +1,37 @@
-<p>pedidos-detalhes works!</p>
+<div class="body">
+    <!-- <form [formGroup]="crudForm"> -->
+        <h1> Detalhes do Pedido</h1>
+            <br/>
+        <label> Voltar para a Listagem</label>
+        <button class="button-cad" pButton routerLink="/pedidos-listagem" type="button" label="Pedidos"></button>
+            <br/>
+        <label>ID do Pedido: </label>
+        <!-- <label>{{ id }}</label> -->
+           <br/>
+        <label>Produtos: </label>
+        <input type="text" pInputText formControlName="nome"/>
+            <br/>
+        <label> Preco: </label>
+        <input type="text" formControlName="preco"/>
+            <br/>
+        <label>Quantidade:</label>
+        <input type="text" formControlName="quantidade_estoque"/>
+                <br/>
+        <label>Data do Pedido:</label>
+        <input type="text" formControlName="data_pedido"/>
+            <br/>
+        <label>Status do Pedido:</label>
+        <input type="number" formControlName="status"/>
+            <br/>
+        <div class="">
+            <button class="button-log" pRipple type="button" label="Editar"></button>
+            <button class="button-log" type="button" label="Deletar" class="p-button-danger" style="margin-left: 5px;"></button>
+            <button class="button-log" routerLink="/produtoslistagem" style="margin-left:5px;" type="button" label="Cancelar" class="p-button-secondary"></button>
+         
+        </div>
+    <!-- </form> -->
+</div>
+<div class="footer">
+    Contato: (84) 321544565
+    Endereço: 
+</div>

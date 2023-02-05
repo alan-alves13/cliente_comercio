@@ -1,0 +1,35 @@
+<div class="body" style="padding-bottom: 15%;">
+    <h1>Lista dos Usuários</h1>
+    <br/>
+    <p-table [value]="usuarios" dataKey="id" selectionMode="single"
+    [(selection)]="selectedObject" (onRowSelect)="OnTableRowClick()">
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th>ID:</th>
+                <th>Nome:</th>
+                <th>CPF:</th>
+                <th>Data de Nascimento:</th>
+                <th>Email:</th>
+                <th>Endereço:</th>
+            </tr>
+        </ng-template>
+        
+        <ng-template pTemplate="body" let-usuario>
+            <tr [pSelectableRow]="usuarios">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.nome}}</td>
+                <td>{{usuario.cpf}}</td>
+                <td>{{usuario.data_nascimento}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.endereco}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<div class="footer">
+    Contato: (84) 321544565
+    Endereço: 
+</div>
+    

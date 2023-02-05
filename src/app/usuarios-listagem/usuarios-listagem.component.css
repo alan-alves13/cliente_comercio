@@ -5,11 +5,10 @@
     margin-left: 1%;
     padding: 9px 45px;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 15px;;
 }
 input {
     padding: 6px;
-    margin: 8px;
 }
 .button-cad {
     padding: 9px;
@@ -27,6 +26,7 @@ input {
 }
 h1 {
     margin: 0;
+    padding: 2%;
     font-size: 45px;
     font-family: monospace;
     color:white;
@@ -76,4 +76,8 @@ label {
     background-color:#0FBD90;
     color: black;
     padding: 4%;
+}
+th, td {
+    color: white;
+    font-size: 22px;
 }

@@ -3,13 +3,14 @@ import { Usuario } from '../usuarios';
 import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
 
+
 @Component({
-  selector: 'app-usuario-detalhes',
-  templateUrl: './usuario-detalhes.component.html',
-  styleUrls: ['./usuario-detalhes.component.css']
+  selector: 'app-usuarios-listagem',
+  templateUrl: './usuarios-listagem.component.html',
+  styleUrls: ['./usuarios-listagem.component.css']
 })
 
-  export class UsuarioDetalhesComponent implements OnInit{
+  export class UsuariosListagemComponent implements OnInit{
 
     usuarios: Usuario[] = [];
     

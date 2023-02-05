@@ -21,6 +21,8 @@ import { MenuClienteComponent } from './menu-cliente/menu-cliente.component';
 import { UsuarioDetalhesComponent } from './usuario-detalhes/usuario-detalhes.component';
 import { PedidosDetalhesComponent } from './pedidos-detalhes/pedidos-detalhes.component';
 import { PedidosListagemComponent } from './pedidos-listagem/pedidos-listagem.component';
+import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
+import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { PedidosListagemComponent } from './pedidos-listagem/pedidos-listagem.co
     MenuClienteComponent,
     UsuarioDetalhesComponent,
     PedidosDetalhesComponent,
-    PedidosListagemComponent
+    PedidosListagemComponent,
+    ProdutoCadastroComponent,
+    UsuariosListagemComponent
   ],
   imports: [
     BrowserModule,
