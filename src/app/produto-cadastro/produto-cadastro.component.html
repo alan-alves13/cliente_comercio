@@ -15,7 +15,18 @@
         <input type="text" formControlName="descricao"/>
             <br/>
         <label>Categoria:</label>
-        <input type="number" formControlName="categoria"/>
+
+        <select for="categoria" formControlName="categoria" id="categoria">
+            <option value="1">Computadores</option>
+            <option value="2">Games</option>
+            <option value="3">Impressão</option>
+            <option value="4">Telefonia e Tablets</option>
+            <option value="5">Eletroportáteis</option>
+            <option value="6">Câmeras e Vídeos</option>
+            <option value="7">Acessórios</option>
+            <option value="8">Outros</option>
+          </select>
+       
             <br/>
         <div class="">
             <button class="button-log" pButton pRipple type="button" label="Salvar" (click)="salvar()"></button>
