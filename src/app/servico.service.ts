@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicoService {
 
+
   constructor(private http: HttpClient ) { }
 
 
@@ -90,4 +91,9 @@ export class ServicoService {
 
    return this.http.delete<Usuario>(url);
   }
+
+
+
+  
+
 }

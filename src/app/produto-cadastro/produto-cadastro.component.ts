@@ -6,6 +6,7 @@ import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
 import { Produto } from '../produtos';
 
+
 @Component({
   selector: 'app-produto-cadastro',
   templateUrl: './produto-cadastro.component.html',
@@ -15,6 +16,8 @@ export class ProdutoCadastroComponent implements OnInit {
   
   id?: number;
   isNew = true;
+  fileName = '';
+  produto?: Produto;
   
   crudForm: FormGroup = this.formBuilder.group({
     id: [0],
@@ -43,8 +46,9 @@ export class ProdutoCadastroComponent implements OnInit {
       this.isNew = true; 
     }
   }
-   
   salvar(): void {
+    
+
     if(this.isNew){
       this.service.addProduto(this.crudForm.value).subscribe({
         next: (produto: Produto) =>{
@@ -78,5 +82,8 @@ export class ProdutoCadastroComponent implements OnInit {
       });
     }
   }
+
+    
+ 
 }
 
