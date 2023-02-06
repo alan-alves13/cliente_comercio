@@ -4,11 +4,11 @@ import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-produto-listagem',
-  templateUrl: './produto-listagem.component.html',
-  styleUrls: ['./produto-listagem.component.css']
+  selector: 'app-produtos-list-admin',
+  templateUrl: './produtos-list-admin.component.html',
+  styleUrls: ['./produtos-list-admin.component.css']
 })
-export class ProdutoListagemComponent implements OnInit{
+export class ProdutosListAdminComponent implements OnInit{
 
   produtos: Produto[] = [];
   
@@ -22,4 +22,10 @@ export class ProdutoListagemComponent implements OnInit{
       complete: () => console.log('Requisicao finalizada')
     });
   }
+  
+  OnTableRowClick(): void {
+    this.router.navigate(['/produtosdetalhe', {id: this.selectedObject?.id}]);
+ 
+  }
 }
+

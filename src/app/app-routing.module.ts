@@ -12,6 +12,8 @@ import { PedidosListagemComponent } from './pedidos-listagem/pedidos-listagem.co
 import { PedidosDetalhesComponent } from './pedidos-detalhes/pedidos-detalhes.component';
 import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem.component';
 import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
+import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
+import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-admin.component';
 
 const routes: Routes = [
   {path: 'produtoslistagem', component: ProdutoListagemComponent},
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: 'pedidos-detalhes', component: PedidosDetalhesComponent},
   {path: 'usuarios-listagem', component: UsuariosListagemComponent},
   {path: 'produto-cadastro', component: ProdutoCadastroComponent},
+  {path: 'pedido-cadastro', component: PedidoCadastroComponent},
+  {path: 'produtos-list-admin', component: ProdutosListAdminComponent},
   {path: '', redirectTo: '/index', pathMatch: 'full'}
 
 ];

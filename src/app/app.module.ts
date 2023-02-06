@@ -23,6 +23,9 @@ import { PedidosDetalhesComponent } from './pedidos-detalhes/pedidos-detalhes.co
 import { PedidosListagemComponent } from './pedidos-listagem/pedidos-listagem.component';
 import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
 import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem.component';
+import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-admin.component';
+import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
+import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-admin.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem
     PedidosDetalhesComponent,
     PedidosListagemComponent,
     ProdutoCadastroComponent,
-    UsuariosListagemComponent
+    UsuariosListagemComponent,
+    ProdutosListAdminComponent,
+    PedidoCadastroComponent,
+    PedidosListAdminComponent
   ],
   imports: [
     BrowserModule,

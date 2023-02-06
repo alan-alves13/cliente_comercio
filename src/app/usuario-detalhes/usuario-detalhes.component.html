@@ -1,23 +1,39 @@
 <div class="body">
     <form>
-        <h1>Edite seu perfil</h1>
+        <h1>Perfil</h1>
             <br/>
-            <br/>
-            <label>Nome: </label>
-            <input type="text" pInputText formControlName="nome"/>
-            <br/>
-            <label>CPF: </label>
-            <input type="text" formControlName="cpf"/>
-            <br/>
-            <label>Email:</label>
-            <input type="text" formControlName="email"/>
-            <br/>
-            <label>Senha:</label>
-            <input type="password" formControlName="senha"/>
-            <br/>
-            <label>Data de Nascimento:</label>
-            <input type="date" formControlName="data_nascimento"/>
-
+            <div class="dadosUser" style="display: inline-block;">
+                <label>Nome: </label>
+                <input type="text" pInputText formControlName="nome"/>
+                <br/>
+                <label>CPF: </label>
+                <input type="text" formControlName="cpf"/>
+                <br/>
+                <label>Email:</label>
+                <input type="text" formControlName="email"/>
+                <br/>
+                <label>Senha:</label>
+                <input type="password" formControlName="senha"/>
+                <br/>
+                <label>Data de Nascimento:</label>
+                <input type="date" formControlName="data_nascimento"/>
+            </div>
+            <div class="dadosEnd" style="display: inline-block;margin-left:8%;">
+                <label>CEP:</label>
+                <input type="text" formControlName="cep"/>
+                    <br/>
+                <label>Logradouro:</label>
+                <input type="text" formControlName="logradouro"/>
+                    <br/>
+                <label>Número:</label>
+                <input type="text" formControlName="numero"/>
+                    <br/>
+                <label>Cidade:</label>
+                <input type="text" formControlName="cidade"/>
+                    <br/>
+                <label>Estado:</label>
+                <input type="text" formControlName="estado"/>
+            </div>
             <div style="text-align:center;padding-top:1%;">
                 <button class="button-log" pButton pRipple type="button" label="Salvar" routerLink=""></button>
                 <button class="button-log" pButton pRipple type="button" label="Apagar" routerLink=""></button>
