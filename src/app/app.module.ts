@@ -26,6 +26,7 @@ import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem
 import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-admin.component';
 import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
 import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-admin.component';
+import { ItempedidoListagemComponent } from './itempedido-listagem/itempedido-listagem.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-adm
     UsuariosListagemComponent,
     ProdutosListAdminComponent,
     PedidoCadastroComponent,
-    PedidosListAdminComponent
+    PedidosListAdminComponent,
+    ItempedidoListagemComponent
   ],
   imports: [
     BrowserModule,

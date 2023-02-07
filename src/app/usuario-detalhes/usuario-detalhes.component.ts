@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Usuario } from '../usuarios';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
+import { Usuario } from '../usuarios';
 
 @Component({
   selector: 'app-usuario-detalhes',
@@ -9,24 +11,43 @@ import { Router } from '@angular/router';
   styleUrls: ['./usuario-detalhes.component.css']
 })
 
-  export class UsuarioDetalhesComponent implements OnInit{
+  export class UsuarioDetalhesComponent {
 
-    usuarios: Usuario[] = [];
+    id?: number;
+    isNew = true;
     
-    selectedObject?: Usuario;
-  
-    constructor(private servico: ServicoService, private router: Router) {}
+    crudForm: FormGroup = this.formBuilder.group({
+      nome: ['', Validators.required],
+      cpf: ['', Validators.required],
+      email: ['', Validators.required],
+      senha: ['', Validators.required],
+      data_nascimento: ['', Validators.required],
+      cliente: [''],
+      administrador: ['']
+     
+    })
+    
+    constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
+      private service: ServicoService, private router: Router){}
+
     ngOnInit(): void {
-      this.servico.getUsuario().subscribe({
-        next: (usuarios: Usuario[]) => this.usuarios = usuarios,
-        error: (erro) => console.log(erro),
-        complete: () => console.log('Requisicao finalizada')
-      });
+      this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
+  
+      if(this.id > 0){
+        this.isNew = false;
+        this.service.getUsuarioByID(this.id).subscribe({
+         next: (usuario: Usuario) => this.crudForm.setValue(usuario),
+         error: (erro: any) => console.log(erro),
+         complete: () => console.log('finalizado')
+        });
+      } else {
+        this.isNew = true; 
+      }
     }
-    
-    OnTableRowClick(): void {
-      this.router.navigate(['/usuario-detalhes', {id: this.selectedObject?.id}]);
+
+    // OnTableRowClick(): void {
+    //   this.router.navigate(['/usuario-detalhes', {id: this.selectedObject?.id}]);
    
-    }
+    // }
   }
   

@@ -7,4 +7,6 @@ export interface Usuario {
     senha: number;
     data_nascimento: string;
     foto: string;
+    cliente: boolean;
+    administrador: boolean;
 }

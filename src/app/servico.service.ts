@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Produto } from './produtos';
 import { Usuario } from './usuarios';
 import { Pedidos } from './pedidos';
+import { ItemPedido } from './itempedido';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -95,6 +96,12 @@ export class ServicoService {
 
   getPedidos(): Observable<Pedidos[]>{
     return this.http.get<Pedidos[]>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/pedidos/');
+    //return this.http.get<Produto[]>('http://localhost:3000/produtos');
+
+  }
+  
+  getItemPedido(): Observable<ItemPedido[]>{
+    return this.http.get<ItemPedido[]>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/');
     //return this.http.get<Produto[]>('http://localhost:3000/produtos');
 
   }

@@ -17,6 +17,14 @@ input {
     margin-left: 1%;
     background-color: #fff;
 }
+.button-del {
+    color: white;
+    background-color: rgb(213 20 20);
+    padding: 9px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-left: 1%;
+}
 .body {
     background-image:url('https://p4.wallpaperbetter.com/wallpaper/261/421/81/technology-electronic-engineering-electronics-green-wallpaper-thumb.jpg');
     opacity:0.9;

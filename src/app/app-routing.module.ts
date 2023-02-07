@@ -15,6 +15,7 @@ import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.co
 import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
 import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-admin.component';
 import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-admin.component';
+import { ItempedidoListagemComponent } from './itempedido-listagem/itempedido-listagem.component';
 
 const routes: Routes = [
   {path: 'produtoslistagem', component: ProdutoListagemComponent},
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'pedido-cadastro', component: PedidoCadastroComponent},
   {path: 'produtos-list-admin', component: ProdutosListAdminComponent},
   {path: 'pedidos-list-admin', component: PedidosListAdminComponent},
+  {path: 'itempedido-listagem', component: ItempedidoListagemComponent},
   {path: '', redirectTo: '/index', pathMatch: 'full'}
 
 ];

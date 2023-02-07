@@ -1,10 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Pedidos } from '../pedidos';
+import { ServicoService } from '../servico.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pedidos-listagem',
   templateUrl: './pedidos-listagem.component.html',
   styleUrls: ['./pedidos-listagem.component.css']
 })
-export class PedidosListagemComponent {
+export class PedidosListagemComponent implements OnInit{
 
+  pedidos: Pedidos[] = [];
+
+  selectedObject?: Pedidos;
+
+constructor(private servico: ServicoService, private router: Router) {}
+  ngOnInit(): void {
+    this.servico.getPedidos().subscribe({
+      next: (pedidos: Pedidos[]) => this.pedidos = pedidos,
+      error: (erro) => console.log(erro),
+      complete: () => console.log('Requisicao finalizada')
+    });
+   
+  }
+  OnTableRowClick(): void {
+    this.router.navigate(['/pedidos-detalhe', {id: this.selectedObject?.id}]);
+ 
+  }
 }
