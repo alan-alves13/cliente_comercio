@@ -14,6 +14,7 @@ import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem
 import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
 import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
 import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-admin.component';
+import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-admin.component';
 
 const routes: Routes = [
   {path: 'produtoslistagem', component: ProdutoListagemComponent},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'produto-cadastro', component: ProdutoCadastroComponent},
   {path: 'pedido-cadastro', component: PedidoCadastroComponent},
   {path: 'produtos-list-admin', component: ProdutosListAdminComponent},
+  {path: 'pedidos-list-admin', component: PedidosListAdminComponent},
   {path: '', redirectTo: '/index', pathMatch: 'full'}
 
 ];

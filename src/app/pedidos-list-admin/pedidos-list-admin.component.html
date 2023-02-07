@@ -1,26 +1,26 @@
 <div class="body" style="padding-bottom: 15%;">
     <h1>Pedidos</h1>
     <br/>
-    <!-- <p-table [value]="pedidos" dataKey="id" selectionMode="single"
-    [(selection)]="selectedObject" (onRowSelect)="OnTableRowClick()"> -->
-    <p-table>
+    <p-table [value]="pedidos" dataKey="id" selectionMode="single"
+    [(selection)]="selectedObject" (onRowSelect)="OnTableRowClick()">
         <ng-template pTemplate="header">
             <tr>
                 <th>ID:</th>
                 <th>Status:</th>
+                <th>Usuario:</th>
                 <th>Data:</th>
-                <th>Itens:</th>
                 <th>Quantidade:</th>
                 <th>Preço:</th>
             </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-produto>
-            <!-- <tr [pSelectableRow]="produtos"> -->
+        <ng-template pTemplate="body" let-pedidos>
+            <tr [pSelectableRow]="pedidos">
                 <tr>
-                <!-- <td>{{produto.id}}</td>
-                <td>{{produto.nome}}</td>
-                <td>{{produto.preco}}</td>
-                <td>{{produto.quantidade_estoque}}</td> -->
+                <td>{{pedidos.id}}</td>
+                <td>{{pedidos.status}}</td>
+                <td>{{pedidos.id_usuario}}</td>
+                <td>{{pedidos.data}}</td>
+                
             </tr>
         </ng-template>
      </p-table> 

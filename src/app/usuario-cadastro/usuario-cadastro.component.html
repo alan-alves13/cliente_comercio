@@ -5,7 +5,7 @@
             <label> Já possui cadastro?</label>
             <button class="button-cad" pButton routerLink="/login" type="button" label="Login"></button>
             <br/>
-            <div class="dadosUser" style="display: inline-block;">
+            <!-- <div class="dadosUser" style="display: inline-block;"> -->
                 <label>Nome: </label>
                 <input type="text" pInputText formControlName="nome"/>
                     <br/>
@@ -21,8 +21,14 @@
                 <label>Data de Nascimento:</label>
                 <input type="date" formControlName="data_nascimento"/>
                     <br/>
-            </div>
-            <div class="dadosEnd" style="display: inline-block;margin-left:8%;">
+                <label>Cliente:</label>
+                <input type="checkbox" formControlName="cliente"/>
+                    <br/>
+                <label>Administrador:</label>
+                <input type="checkbox" formControlName="administrador"/>
+                    <br/>
+            <!-- </div> -->
+            <!-- <div class="dadosEnd" style="display: inline-block;margin-left:8%;">
                 <label>CEP:</label>
                 <input type="text" formControlName="cep"/>
                     <br/>
@@ -37,7 +43,7 @@
                     <br/>
                 <label>Estado:</label>
                 <input type="text" formControlName="estado"/>
-            </div>
+            </div> -->
             <div style="text-align:center;padding-top:1%;">
                 <button class="button-log" pButton pRipple type="button" label="Cadastrar" (click)="salvar()"></button>
                 <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
