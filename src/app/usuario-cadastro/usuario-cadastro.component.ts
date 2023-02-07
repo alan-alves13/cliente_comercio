@@ -20,8 +20,9 @@ export class UsuarioCadastroComponent {
     cpf: ['', Validators.required],
     email: ['', Validators.required],
     senha: ['', Validators.required],
-    data_nascimento: ['', Validators.required]
-   
+    data_nascimento: ['', Validators.required],
+    cliente:[],     
+    administrador:[]
   })
   
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
