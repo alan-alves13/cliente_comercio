@@ -26,10 +26,12 @@
             <option value="7">Acessórios</option>
             <option value="8">Outros</option>
           </select>
-            <br/>
-    
 
             <br/>
+            <label>Foto:</label>
+                <input type="file" formControlName="foto" (change)="onFileSelected($event)"> 
+            <br/>
+        
         <div class="">
             <button class="button-log" pButton pRipple type="button" label="Salvar" (click)="salvar()"></button>
             <button class="button-log" pButton pRipple type="button" routerLink="/produtoslistagem" style="margin-left:5px;" label="Cancelar"></button>
