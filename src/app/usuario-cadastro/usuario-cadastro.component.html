@@ -1,49 +1,32 @@
 <div class="body">
     <form [formGroup]="crudForm">
-        <h1> Faça seu Cadastro</h1>
+        <h1> FAÇA SEU CADASTRO</h1>
             <br/>
             <label> Já possui cadastro?</label>
-            <button class="button-cad" pButton routerLink="/login" type="button" label="Login"></button>
+            <button class="button-cad" pButton routerLink="/login" type="button" label="Login" style="margin-bottom:1%;"></button>
             <br/>
-            <!-- <div class="dadosUser" style="display: inline-block;"> -->
+            <div class="dadosUser" style="display: inline-block;"> 
                 <label>Nome: </label>
-                <input type="text" pInputText formControlName="nome"/>
+                <input type="text" pInputText formControlName="nome" style="width:280px;"/>
                     <br/>
                 <label>CPF: </label>
-                <input type="text" formControlName="cpf"/>
+                <input type="text" formControlName="cpf" style="width:290px;"/>
                     <br/>
                 <label>Email:</label>
-                <input type="text" formControlName="email"/>
+                <input type="text" formControlName="email" style="width:280px;"/>
                     <br/>
                 <label>Senha:</label>
-                <input type="password" formControlName="senha"/>
+                <input type="password" formControlName="senha" style="width:280px;"/>
                     <br/>
                 <label>Data de Nascimento:</label>
-                <input type="date" formControlName="data_nascimento"/>
+                <input type="date" formControlName="data_nascimento" style="width:290px;"/>
                     <br/>
-                <label>Cliente:</label>
                 <input type="checkbox" formControlName="cliente"/>
-                    <br/>
-                <label>Administrador:</label>
-                <input type="checkbox" formControlName="administrador"/>
-                    <br/>
-            <!-- </div> -->
-            <!-- <div class="dadosEnd" style="display: inline-block;margin-left:8%;">
-                <label>CEP:</label>
-                <input type="text" formControlName="cep"/>
-                    <br/>
-                <label>Logradouro:</label>
-                <input type="text" formControlName="logradouro"/>
-                    <br/>
-                <label>Número:</label>
-                <input type="text" formControlName="numero"/>
-                    <br/>
-                <label>Cidade:</label>
-                <input type="text" formControlName="cidade"/>
-                    <br/>
-                <label>Estado:</label>
-                <input type="text" formControlName="estado"/>
-            </div> -->
+                <label>Cliente</label>
+                <input type="checkbox" formControlName="administrador"/> 
+                <label>Administrador</label>
+            </div>
+            
             <div style="text-align:center;padding-top:1%;">
                 <button class="button-log" pButton pRipple type="button" label="Cadastrar" (click)="salvar()"></button>
                 <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
@@ -52,7 +35,23 @@
 </div>
 
 <div class="footer">
-    Contato: (84) 321544565
-    Endereço: 
-</div>
+    <div class="footer-t">
+     <h3> Redes Sociais:</h3>
+        @portal_eletronicos
+        <br/>
+        Portal_eletronicos
+      </div>
+      <div class="footer-t1">
+      <h3> Contato: </h3>
+          0800 0001 2000
+        <br/>
+        (84) 3254 4565
+      </div>
+      <div class="footer-t">
+      <h3>  Endereço: </h3>
+        Rua Triunfo, 00
+        <br/>
+        59000-000, Natal RN
+      </div>
+  </div>
     

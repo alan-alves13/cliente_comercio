@@ -1,17 +1,17 @@
    
-   <div class="body">
-        <h1> Faça seu login</h1>
+<div class="body">
+        <h1>FAÇA SEU LOGIN</h1>
         <br/>
             <label> Não possui cadastro?</label>
             <button class="button-cad" pButton routerLink="/usuario-cadastro" type="button" label="Cadastrar"></button>
         <div class="form">
             <form [formGroup]="crudForm">  
                 <label>Email:</label>
-                <input type="text" formControlName="email">
+                <input type="text" formControlName="email" style="width:290px;"/>
                 <br/>
                 <div style="margin:15px">
                     <label> Senha:</label>
-                    <input type="password" formControlName="senha"/>
+                    <input type="password" formControlName="senha" style="width:290px;"/>
                 </div>
                 <div style="text-align:center;margin-top:3%;">
                         <button class="button-log" pButton pRipple type="button" label="Entrar" (click)="entrar()"></button>
@@ -19,10 +19,24 @@
                 </div>          
             </form>
         </div>
-    </div>
-<div class="footer">
-    Contato: (84) 321544565
-    Endereço: 
 </div>
-    
-
+<div class="footer">
+    <div class="footer-t">
+     <h3> Redes Sociais:</h3>
+        @portal_eletronicos
+        <br/>
+        Portal_eletronicos
+      </div>
+      <div class="footer-t1">
+      <h3> Contato: </h3>
+          0800 0001 2000
+        <br/>
+        (84) 3254 4565
+      </div>
+      <div class="footer-t">
+      <h3>  Endereço: </h3>
+        Rua Triunfo, 00
+        <br/>
+        59000-000, Natal RN
+      </div>
+  </div>
