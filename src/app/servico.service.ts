@@ -41,12 +41,12 @@ export class ServicoService {
 
     return this.http.get<Produto>(url);
   }
-
+  /*
   addProduto(produto: Produto): Observable<Produto>{
     return this.http.post<Produto>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/', produto);
   //return this.http.post<Produto>('http://localhost:3000/produtos', produto);
     
-  }
+  } */
 
   updateProduto(produto: Produto): Observable<Produto>{
     const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${produto.id}`;

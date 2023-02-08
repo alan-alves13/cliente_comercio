@@ -42,7 +42,7 @@ export class ProdutoDetalhesComponent implements OnInit {
       this.isNew = true; 
     }
   }
-   
+   /*
   salvar(): void {
     if(this.isNew){
       this.service.addProduto(this.crudForm.value).subscribe({
@@ -64,7 +64,9 @@ export class ProdutoDetalhesComponent implements OnInit {
       });
     }
   }
-
+  
+   */
+ 
   deletar(): void {
     if (!this.isNew){
       this.service.detelarProduto(this.id!).subscribe({
