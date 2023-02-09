@@ -27,6 +27,10 @@ import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-
 import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
 import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-admin.component';
 import { ItempedidoListagemComponent } from './itempedido-listagem/itempedido-listagem.component';
+import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
+import { EnderecoCadastroComponent } from './endereco-cadastro/endereco-cadastro.component';
+import { EnderecoDetalhesComponent } from './endereco-detalhes/endereco-detalhes.component';
+import { EnderecoEditComponent } from './endereco-edit/endereco-edit.component';
 
 
 @NgModule({
@@ -47,7 +51,11 @@ import { ItempedidoListagemComponent } from './itempedido-listagem/itempedido-li
     ProdutosListAdminComponent,
     PedidoCadastroComponent,
     PedidosListAdminComponent,
-    ItempedidoListagemComponent
+    ItempedidoListagemComponent,
+    UsuarioEditComponent,
+    EnderecoCadastroComponent,
+    EnderecoDetalhesComponent,
+    EnderecoEditComponent
   ],
   imports: [
     BrowserModule,

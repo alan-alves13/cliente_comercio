@@ -16,6 +16,10 @@ import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.compo
 import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-admin.component';
 import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-admin.component';
 import { ItempedidoListagemComponent } from './itempedido-listagem/itempedido-listagem.component';
+import { EnderecoCadastroComponent } from './endereco-cadastro/endereco-cadastro.component';
+import { EnderecoEditComponent } from './endereco-edit/endereco-edit.component';
+import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
+import { EnderecoDetalhesComponent } from './endereco-detalhes/endereco-detalhes.component';
 
 const routes: Routes = [
   {path: 'produtoslistagem', component: ProdutoListagemComponent},
@@ -35,6 +39,10 @@ const routes: Routes = [
   {path: 'produtos-list-admin', component: ProdutosListAdminComponent},
   {path: 'pedidos-list-admin', component: PedidosListAdminComponent},
   {path: 'itempedido-listagem', component: ItempedidoListagemComponent},
+  {path: 'endereco-cadastro', component: EnderecoCadastroComponent},
+  {path: 'endereco-edit', component: EnderecoEditComponent},
+  {path: 'usuario-edit', component: UsuarioEditComponent},
+  {path: 'endereco-detalhes', component: EnderecoDetalhesComponent},
   {path: '', redirectTo: '/index', pathMatch: 'full'}
 
 ];

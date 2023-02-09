@@ -1,0 +1,56 @@
+<div class="body">
+    <form [formGroup]="crudForm">
+        <h1 style="padding-bottom:0!important;">ADICIONE SEU ENDEREÇO</h1>
+            <br/>
+            <button class="button-cad" pButton routerLink="/index" type="button" label="Voltar" style="margin-left: 80%;margin-bottom:0;"></button>
+            <br/>
+            <div class="dadosUser" style="display: inline-block;"> 
+                <label>Logradouro: </label>
+                <input type="text" pInputText formControlName="logradouro" style="width:235px;"/>
+                    <br/>
+                <label>Numero: </label>
+                <input type="number" formControlName="numero" style="width:290px;"/>
+                    <br/>
+                <label>CEP:</label>
+                <input type="text" formControlName="cep" style="width:345px;"/>
+                    <br/>   
+                <label>Cidade:</label>
+                <input type="text" formControlName="cidade" style="width:300px;"/>
+                    <br/>
+                <label>UF:</label>
+                <input type="text" formControlName="uf" style="width:350px;"/>
+                    <br/>
+                <label> Complemento:</label>
+                <input type="text" formControlName="complemento" style="width:230px;"/>
+                    <br/>
+             
+            </div>
+            
+            <div style="text-align:center;padding-top:1%;">
+                <button class="button-log" pButton pRipple type="button" label="Cadastrar" (click)="salvar()"></button>
+                <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
+            </div>
+    </form>
+</div>
+
+<div class="footer">
+    <div class="footer-t">
+     <h3> Redes Sociais:</h3>
+        @portal_eletronicos
+        <br/>
+        Portal_eletronicos
+      </div>
+      <div class="footer-t1">
+      <h3> Contato: </h3>
+          0800 0001 2000
+        <br/>
+        (84) 3254 4565
+      </div>
+      <div class="footer-t">
+      <h3>  Endereço: </h3>
+        Rua Triunfo, 00
+        <br/>
+        59000-000, Natal RN
+      </div>
+  </div>
+    

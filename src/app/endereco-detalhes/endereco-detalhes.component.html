@@ -1,0 +1,60 @@
+<div class="body"  style="padding-bottom: 15%;">
+    <h1>ENDEREÇO</h1>
+    <label style="margin-left: 12%;"> Aqui você tem acesso ao seu Endereço, podendo editar e deletar</label>
+    <button class="button-cad" pButton routerLink="/menu-cliente" type="button" label="Voltar" style="margin-left: 12%;margin-bottom: 2%;"></button>
+        <p-table [value]="endereco" dataKey="id" selectionMode="single"
+        [(selection)]="selectedObject">
+    
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>ID:</th>
+                    <th>Logradouro:</th>
+                    <th>Numero:</th>
+                    <th>CEP:</th>
+                    <th>Cidade:</th>
+                    <th>UF:</th>
+                    <th>Complemento:</th>
+                </tr>
+            </ng-template>
+            
+            <ng-template pTemplate="body" let-endereco>
+                <tr [pSelectableRow]="endereco">
+                    <td>{{endereco.id}}</td>
+                    <td>{{endereco.logradouro}}/td>
+                    <td>{{endereco.numero}}</td>
+                    <td>{{endereco.cep}}</td>
+                    <td>{{endereco.cidade}}</td>
+                    <td>{{endereco.uf}}</td>
+                    <td>{{endereco.complemento}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+            <button class="button-cad" pButton pRipple type="button" routerLink="/endereco-edit" style="margin-left:5px;margin-top: 5%;" label="EDITAR"></button>
+            <button class="button-del" pButton pRipple type="button" routerLink="/deletar" label="DELETAR"></button>
+</div>
+
+
+<div class="footer">
+<div class="footer-t">
+ <h3> Redes Sociais:</h3>
+    @portal_eletronicos
+    <br/>
+    Portal_eletronicos
+</div>
+<div class="footer-t1">
+  <h3> Contato: </h3>
+      0800 0001 2000
+    <br/>
+    (84) 3254 4565
+</div>
+<div class="footer-t">
+  <h3>  Endereço: </h3>
+    Rua Triunfo, 00
+    <br/>
+    59000-000, Natal RN
+</div>
+</div>
+
+
+
+

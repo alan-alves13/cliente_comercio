@@ -1,9 +1,6 @@
 <div class="body">
     <form [formGroup]="crudForm">
-        <h1> FAÇA SEU CADASTRO</h1>
-            <br/>
-            <label> Já possui cadastro?</label>
-            <button class="button-cad" pButton routerLink="/login" type="button" label="Login" style="margin-bottom:1%;"></button>
+        <h1> EDITE SEU CADASTRO</h1>
             <br/>
             <div class="dadosUser" style="display: inline-block;"> 
                 <label>Nome: </label>
@@ -19,6 +16,7 @@
                 <input type="password" formControlName="senha" style="width:280px;"/>
                     <br/>
                 <label>Data de Nascimento:</label>
+                    <br/>
                 <input type="date" formControlName="data_nascimento" style="width:290px;"/>
                     <br/>
                 <input type="checkbox" formControlName="cliente"/>
@@ -28,12 +26,11 @@
                     <br/>
                 <label>Foto:</label>
                 <input type="file" formControlName="foto" (change)="onFileSelected($event)" style="color: white;"> 
-                <br/>
             </div>
             
             <div style="text-align:center;padding-top:1%;">
                 <button class="button-log" pButton pRipple type="button" label="Cadastrar" (click)="salvar()"></button>
-                <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
+                <button class="button-log" pButton routerLink="/menu-cliente" type="button" label="Voltar"></button>
             </div>
     </form>
 </div>

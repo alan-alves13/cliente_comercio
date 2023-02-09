@@ -22,7 +22,8 @@ export class UsuarioCadastroComponent {
     senha: ['', Validators.required],
     data_nascimento: ['', Validators.required],
     cliente:[],     
-    administrador:[]
+    administrador:[],
+    foto: ['', Validators.required]
   })
   
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
@@ -41,8 +42,16 @@ export class UsuarioCadastroComponent {
     } else {
       this.isNew = true; 
     }
+    
+ 
   }
-   
+    onFileSelected(event: any) {
+    if (event.target.files.length>0){
+      const file = event.target.files[0];
+      this.crudForm.get('foto')?.setValue(file);
+    }
+  }
+  
   salvar(): void {
     if(this.isNew){
       this.service.addUsuario(this.crudForm.value).subscribe({
