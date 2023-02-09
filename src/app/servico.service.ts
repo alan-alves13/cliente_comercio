@@ -97,15 +97,37 @@ export class ServicoService {
   getPedidos(): Observable<Pedidos[]>{
     return this.http.get<Pedidos[]>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/pedidos/');
     //return this.http.get<Produto[]>('http://localhost:3000/produtos');
-
   }
-  
+
+  addPedido(pedidos: Pedidos): Observable<Pedidos>{
+    return this.http.post<Pedidos>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/pedidos/', pedidos);
+   //return this.http.post<Usuario>('http://localhost:3000/usuarios', usuario); 
+   }
+ 
+   updatePedido(pedidos: Pedidos): Observable<Pedidos>{
+      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${pedidos.id}`;
+     // const url = `http://localhost:3000/usuario/${usuario.id}`;
+ 
+    return this.http.put<Pedidos>(url, pedidos);
+   }
+
   getItemPedido(): Observable<ItemPedido[]>{
     return this.http.get<ItemPedido[]>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/');
     //return this.http.get<Produto[]>('http://localhost:3000/produtos');
-
   }
 
+  addItemPedido(ItemPedido: ItemPedido): Observable<ItemPedido>{
+    return this.http.post<ItemPedido>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/', ItemPedido);
+   //return this.http.post<Usuario>('http://localhost:3000/usuarios', usuario);
+     
+   }
+ 
+   updateItemPedido(ItemPedido: ItemPedido): Observable<ItemPedido>{
+      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${ItemPedido.id}`;
+     // const url = `http://localhost:3000/usuario/${usuario.id}`;
+ 
+    return this.http.put<ItemPedido>(url, ItemPedido);
+   }
 
   
 

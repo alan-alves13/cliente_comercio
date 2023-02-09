@@ -1,22 +1,22 @@
 <div class="body">
     <form [formGroup]="crudForm">
-        <h1> Cadastrar Produto</h1>
+        <h1> ADICIONAR PRODUTO</h1>
             <br/>
         <label>Nome: </label>
-        <input type="text" pInputText formControlName="nome"/>
+        <input type="text" pInputText formControlName="nome" style="width:280px;"/>
             <br/>
         <label> Preco: </label>
-        <input type="text" formControlName="preco"/>
+        <input type="text" formControlName="preco" style="width:265px;"/>
             <br/>
         <label>Quantidade:</label>
-        <input type="text" formControlName="quantidade_estoque"/>
+        <input type="text" formControlName="quantidade_estoque" style="width:210px;"/>
                 <br/>
         <label>Descricao:</label>
-        <input type="text" formControlName="descricao"/>
+        <input type="text" formControlName="descricao" style="width:220px;"/>
             <br/>
         <label>Categoria:</label>
 
-        <select for="categoria" formControlName="categoria" id="categoria">
+        <select for="categoria" formControlName="categoria" id="categoria" style="width:240px;">
             <option value="1">Computadores</option>
             <option value="2">Games</option>
             <option value="3">Impressão</option>
@@ -29,12 +29,12 @@
 
             <br/>
             <label>Foto:</label>
-                <input type="file" formControlName="foto" (change)="onFileSelected($event)"> 
+                <input type="file" formControlName="foto" (change)="onFileSelected($event)" style="color: white;"> 
             <br/>
         
-        <div class="">
+        <div style="margin-top:1%;">
             <button class="button-log" pButton pRipple type="button" label="Salvar" (click)="salvar()"></button>
-            <button class="button-log" pButton pRipple type="button" routerLink="/produtoslistagem" style="margin-left:5px;" label="Cancelar"></button>
+            <button class="button-log" pButton pRipple type="button" routerLink="/produtos-list-admin" style="margin-left:14px;" label="Cancelar"></button>
         </div>
     </form>
 </div>

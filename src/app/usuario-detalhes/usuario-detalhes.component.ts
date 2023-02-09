@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ServicoService } from '../servico.service';
@@ -11,43 +11,39 @@ import { Usuario } from '../usuarios';
   styleUrls: ['./usuario-detalhes.component.css']
 })
 
-  export class UsuarioDetalhesComponent {
+    export class UsuarioDetalhesComponent implements OnInit{
 
-    id?: number;
-    isNew = true;
+      usuarios: Usuario[] = [];
+      id?: number;
+      isNew = true;
+      crudForm: FormGroup = this.formBuilder.group({
+        nome: ['', Validators.required],
+        cpf: ['', Validators.required],
+        email: ['', Validators.required],
+        senha: ['', Validators.required],
+        data_nascimento: ['', Validators.required],
+        cliente:[],     
+        administrador:[]
+      })
+      
+      selectedObject?: Usuario;
     
-    crudForm: FormGroup = this.formBuilder.group({
-      nome: ['', Validators.required],
-      cpf: ['', Validators.required],
-      email: ['', Validators.required],
-      senha: ['', Validators.required],
-      data_nascimento: ['', Validators.required],
-      cliente: [''],
-      administrador: ['']
-     
-    })
+      constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
+        private service: ServicoService, private router: Router){}
+      ngOnInit(): void {
+        this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
     
-    constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
-      private service: ServicoService, private router: Router){}
-
-    ngOnInit(): void {
-      this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
-  
-      if(this.id > 0){
-        this.isNew = false;
-        this.service.getUsuarioByID(this.id).subscribe({
-         next: (usuario: Usuario) => this.crudForm.setValue(usuario),
-         error: (erro: any) => console.log(erro),
-         complete: () => console.log('finalizado')
-        });
-      } else {
-        this.isNew = true; 
+        if(this.id>0){
+          this.isNew = false;
+          this.service.getUsuarioByID(this.id).subscribe({
+           next: (usuario: Usuario) => this.crudForm.setValue(usuario),
+           error: (erro: any) => console.log(erro),
+           complete: () => console.log('finalizado')
+          });
+        } else {
+          this.isNew = true; 
+        }
       }
-    }
-
-    // OnTableRowClick(): void {
-    //   this.router.navigate(['/usuario-detalhes', {id: this.selectedObject?.id}]);
-   
-    // }
+       
   }
   

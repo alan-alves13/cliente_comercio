@@ -1,7 +1,8 @@
 <div class="body" style="padding-bottom: 15%;">
-    <h1>Pedidos</h1>
+    <h1>PEDIDOS</h1>
     <br/>
-    <button class="button-log" pButton pRipple type="button" routerLink="/pedido-cadastro" style="margin-left:5px;" label="Novo Pedido"></button>
+    <button class="button-log" pButton pRipple type="button" routerLink="/pedido-cadastro" style="margin-left:35%;" label="Novo Pedido"></button>
+    <button class="button-cad" pButton routerLink="/menu-cliente" type="button" label="Voltar" style="margin-left: 30%;margin-bottom: 2%;"></button>
     <p-table [value]="pedidos" dataKey="id" selectionMode="single" [(selection)]="selectedObject" (onRowSelect)="OnTableRowClick()">
         <ng-template pTemplate="header">
             <tr>

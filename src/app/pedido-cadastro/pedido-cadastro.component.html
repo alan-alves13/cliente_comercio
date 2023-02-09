@@ -1,18 +1,21 @@
 <div class="body">
-    <form >
-        <h1> Faça seu Pedido</h1>
+    <form [formGroup]="crudForm">
+        <h1> FAÇA SEU PEDIDO</h1>
+        <label style="margin-bottom:5%;"> Adicione o produto e quantidade, quantos itens desejar
+        <br/> Quando concluir, finalize seu pedido</label>
             <br/>
-            <br/>
+              <div style="margin:2%;">
                  <label>Produto: </label>
-                <input type="text" pInputText formControlName="nome"/>
+                <input type="text" pInputText formControlName="nome" style="width:280px;"/>
                     <br/>
                 <label>Quantidade: </label>
-                <input type="text" formControlName="cpf"/>
+                <input type="text" formControlName="quantidade" style="width:240px;"/>
                     <br/>
-          
+              </div>
             <div style="text-align:center;padding-top:1%;">
-                <button class="button-log" pButton pRipple type="button" label="Cadastrar"></button>
-                <button class="button-log" pButton routerLink="/index" type="button" label="Voltar"></button>
+                <button class="button-log" pButton pRipple type="button" routerLink="/pedido-cadastro" label="Adicionar Item"></button>
+                <button class="button-log" pButton pRipple type="button" routerLink="/pedido-finalizado" label="Finalizar Pedido"></button>
+                <button class="button-log" pButton routerLink="/menu-cliente" type="button" label="Voltar"></button>
             </div>
     </form>
 </div>

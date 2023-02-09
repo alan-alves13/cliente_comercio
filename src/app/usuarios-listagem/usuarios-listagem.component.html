@@ -1,6 +1,7 @@
 <div class="body" style="padding-bottom: 15%;">
-    <h1>Usuários</h1>
+    <h1 style="padding-bottom:0!important;">USUÁRIOS</h1>
     <br/>
+    <button class="button-cad" pButton routerLink="/menu-admin" type="button" label="Voltar" style="margin-left: 80%;margin-bottom: 2%;"></button>
     <p-table [value]="usuarios" dataKey="id" selectionMode="single"
     [(selection)]="selectedObject" (onRowSelect)="OnTableRowClick()">
 
@@ -23,6 +24,7 @@
                 <td>{{usuario.data_nascimento}}</td>
                 <td>{{usuario.email}}</td>
                 <td>{{usuario.endereco}}</td>
+                <button class="button-del" pButton pRipple type="button" routerLink="/deletar" label="DELETAR"></button>
             </tr>
         </ng-template>
     </p-table>
