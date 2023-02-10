@@ -23,8 +23,5 @@ constructor(private servico: ServicoService, private router: Router) {}
     });
    
   }
-  OnTableRowClick(): void {
-    this.router.navigate(['/pedidos-detalhe', {id: this.selectedObject?.id}]);
- 
-  }
+
 }

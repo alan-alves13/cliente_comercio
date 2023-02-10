@@ -25,9 +25,5 @@ import { Router } from '@angular/router';
       });
     }
     
-    OnTableRowClick(): void {
-      this.router.navigate(['/usuario-detalhes', {id: this.selectedObject?.id}]);
-   
-    }
   }
   

@@ -23,9 +23,5 @@ export class ProdutosListAdminComponent implements OnInit{
     });
   }
   
-  OnTableRowClick(): void {
-    this.router.navigate(['/produtosdetalhe', {id: this.selectedObject?.id}]);
- 
-  }
 }
 

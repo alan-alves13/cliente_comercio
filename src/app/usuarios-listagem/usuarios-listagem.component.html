@@ -2,8 +2,7 @@
     <h1 style="padding-bottom:0!important;">USUÁRIOS</h1>
     <br/>
     <button class="button-cad" pButton routerLink="/menu-admin" type="button" label="Voltar" style="margin-left: 80%;margin-bottom: 2%;"></button>
-    <p-table [value]="usuarios" dataKey="id" selectionMode="single"
-    [(selection)]="selectedObject" (onRowSelect)="OnTableRowClick()">
+    <p-table [value]="usuarios" dataKey="id" selectionMode="single" [(selection)]="selectedObject">
 
         <ng-template pTemplate="header">
             <tr>
