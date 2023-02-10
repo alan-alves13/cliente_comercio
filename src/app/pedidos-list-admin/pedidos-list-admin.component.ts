@@ -22,8 +22,4 @@ constructor(private servico: ServicoService, private router: Router) {}
       complete: () => console.log('Requisicao finalizada')
     });
   }
-  OnTableRowClick(): void {
-    this.router.navigate(['/pedidos-detalhe', {id: this.selectedObject?.id}]);
- 
-  }
 }
