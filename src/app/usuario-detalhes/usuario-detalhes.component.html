@@ -20,14 +20,14 @@
                         <td>{{usuario.id}}</td>
                         <td>{{usuario.nome}}</td>
                         <td>{{usuario.cpf}}</td>
-                        <td>{{usuario.data_nascimento}}</td>
+                        <td>{{usuario.data_nascimento | date: 'dd/MM/yyyy'}}</td>
                         <td>{{usuario.email}}</td>
                         <td>{{usuario.foto}}</td>
                        
                     </tr>
                 </ng-template>
             </p-table>
-                <button class="button-cad" pButton pRipple type="button" routerLink="/usuario-edit" style="margin-left:5px;margin-top: 5%;" label="EDITAR"></button>
+                <button class="button-cad" pButton pRipple type="button" style="margin-left:5px;margin-top: 5%;" label="EDITAR" (click)="editar()"></button>
                 <button class="button-del" pButton pRipple type="button" routerLink="/deletar" label="DELETAR"></button>
     </div>
 

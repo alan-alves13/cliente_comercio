@@ -32,7 +32,7 @@ const routes: Routes = [
   {path: 'menu-cliente', component: MenuClienteComponent},
   {path: 'usuario-detalhes', component: UsuarioDetalhesComponent},
   {path: 'pedidos-listagem', component: PedidosListagemComponent},
-  {path: 'pedidos-detalhes', component: PedidosDetalhesComponent},
+  {path: 'pedidos-detalhes/:id', component: PedidosDetalhesComponent},
   {path: 'usuarios-listagem', component: UsuariosListagemComponent},
   {path: 'produto-cadastro', component: ProdutoCadastroComponent},
   {path: 'pedido-cadastro', component: PedidoCadastroComponent},
@@ -40,8 +40,8 @@ const routes: Routes = [
   {path: 'pedidos-list-admin', component: PedidosListAdminComponent},
   {path: 'itempedido-listagem', component: ItempedidoListagemComponent},
   {path: 'endereco-cadastro', component: EnderecoCadastroComponent},
-  {path: 'endereco-edit', component: EnderecoEditComponent},
-  {path: 'usuario-edit', component: UsuarioEditComponent},
+  {path: 'endereco-edit/:id', component: EnderecoEditComponent},
+  {path: 'usuario-edit/:id', component: UsuarioEditComponent},
   {path: 'endereco-detalhes', component: EnderecoDetalhesComponent},
   {path: '', redirectTo: '/index', pathMatch: 'full'}
 

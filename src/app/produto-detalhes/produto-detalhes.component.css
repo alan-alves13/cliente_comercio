@@ -7,8 +7,9 @@
     text-transform: uppercase;
     margin-bottom: 15px;;
 }
-input {
+input, select {
     padding: 6px;
+    margin:8px;
 }
 .button-cad {
     padding: 9px;

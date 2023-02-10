@@ -18,8 +18,7 @@
                 <td>{{pedidos.id}}</td>
                 <td>{{pedidos.status}}</td>
                 <td>{{pedidos.id_usuario}}</td>
-                <td>{{pedidos.data}}</td>
-                <button class="button-cad" pButton pRipple type="button" routerLink="/pedidos-detalhes/{{pedidos.id}}" style="margin-left:5px;" label="Editar"></button>
+                <td>{{pedidos.data | date: 'HH:mm dd/MM/yyyy'}}</td>
                 <button class="button-del" pButton pRipple type="button" routerLink="/deletar" label="DELETAR"></button>
             </tr>
         </ng-template>

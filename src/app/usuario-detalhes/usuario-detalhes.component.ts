@@ -18,7 +18,7 @@ import { Usuario } from '../usuarios';
       isNew = true;
       selectedObject?: Usuario;
     
-      constructor(private route: ActivatedRoute, private service: ServicoService){}
+      constructor(private route: ActivatedRoute, private service: ServicoService, private router: Router){}
       ngOnInit(): void {
         this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
     
@@ -29,6 +29,14 @@ import { Usuario } from '../usuarios';
            complete: () => console.log('finalizado')
           });
         } 
-      }
+
+        
+  editar(): void {
+   
+          this.router.navigate(['/usuario-edit/' + this.id]);
+      
+    }
+  }
+
        
   

@@ -14,7 +14,7 @@ export class UsuarioEditComponent {
 
     id?: number;
     isNew = true;
-    
+   
     crudForm: FormGroup = this.formBuilder.group({
       nome: ['', Validators.required],
       cpf: ['', Validators.required],
@@ -31,7 +31,7 @@ export class UsuarioEditComponent {
       
     ngOnInit(): void {
       this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
-  
+     
       if(this.id>0){
         this.isNew = false;
         this.service.getUsuarioByID(this.id).subscribe({

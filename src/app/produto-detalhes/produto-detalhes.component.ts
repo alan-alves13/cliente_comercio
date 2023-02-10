@@ -42,10 +42,10 @@ export class ProdutoDetalhesComponent implements OnInit {
       this.isNew = true; 
     }
   }
-   /*
+
   salvar(): void {
     if(this.isNew){
-      this.service.addProduto(this.crudForm.value).subscribe({
+      this.service.updateProduto(this.crudForm.value).subscribe({
         next: (produto: Produto) =>{
           console.log(produto);
           this.router.navigate(['/produtoslistagem']);
@@ -65,7 +65,6 @@ export class ProdutoDetalhesComponent implements OnInit {
     }
   }
   
-   */
  
   deletar(): void {
     if (!this.isNew){

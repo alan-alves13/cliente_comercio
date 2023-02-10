@@ -5,38 +5,35 @@
         <label>ID: </label>
         <label>{{ id }}</label>
            <br/>
-        <label>Nome: </label>
-        <input type="text" pInputText formControlName="nome"/>
+           <label>Nome: </label>
+           <input type="text" pInputText formControlName="nome" style="width:280px;"/>
+               <br/>
+           <label> Preco: </label>
+           <input type="text" formControlName="preco" style="width:265px;"/>
+               <br/>
+           <label>Quantidade:</label>
+           <input type="text" formControlName="quantidade_estoque" style="width:210px;"/>
+                   <br/>
+           <label>Descricao:</label>
+           <input type="text" formControlName="descricao" style="width:220px;"/>
+               <br/>
+           <label>Categoria:</label>
+   
+           <select for="categoria" formControlName="categoria" id="categoria" style="width:240px;">
+               <option value="1">Computadores</option>
+               <option value="2">Games</option>
+               <option value="3">Impressão</option>
+               <option value="4">Telefonia e Tablets</option>
+               <option value="5">Eletroportáteis</option>
+               <option value="6">Câmeras e Vídeos</option>
+               <option value="7">Acessórios</option>
+               <option value="8">Outros</option>
+             </select>
             <br/>
-        <label> Preco: </label>
-        <input type="text" formControlName="preco"/>
-            <br/>
-        <label>Quantidade:</label>
-        <input type="text" formControlName="quantidade_estoque"/>
-                <br/>
-        <label>Descricao:</label>
-        <input type="text" formControlName="descricao"/>
-            <br/>
-        <label>Categoria:</label>
-        <select for="categoria" formControlName="categoria" id="categoria">
-            <option value="1">Computadores</option>
-            <option value="2">Games</option>
-            <option value="3">Impressão</option>
-            <option value="4">Telefonia e Tablet</option>
-            <option value="5">Eletroportáteis</option>
-            <option value="6">Câmeras e Vídeos</option>
-            <option value="7">Acessórios</option>
-            <option value="8">Outros</option>
-          </select>
-            <br/>
-        <div class="">
-            <!--
-                         <button class="button-log" pButton pRipple type="button" label="Salvar" (click)="salvar()"></button>
-
-            -->
+            <button class="button-log" pButton pRipple type="button" label="Salvar" (click)="salvar()"></button>
             <button class="button-log" pButton pRipple type="button" routerLink="/produtoslistagem" style="margin-left:5px;" label="Cancelar"></button>
             <button class="button-log" pButton pRipple type="button" label="Apagar" (click)="deletar()" style="margin-left: 5px;"></button>
-        </div>
+       
     </form>
 </div>
 <div class="footer">
