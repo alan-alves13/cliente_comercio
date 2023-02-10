@@ -21,7 +21,8 @@ export class EnderecoCadastroComponent {
       numero: ['', Validators.required],
       uf: ['', Validators.required],
       cidade: ['', Validators.required],
-      complemento: ['', Validators.required]
+      complemento: ['', Validators.required],
+      id_usuario: ['', Validators.required]
     })
     
     constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
@@ -45,9 +46,9 @@ export class EnderecoCadastroComponent {
     salvar(): void {
       if(this.isNew){
         this.service.addEndereco(this.crudForm.value).subscribe({
-          next: (endereco: Endereco) =>{
+          next: (endereco: Endereco) =>{ 
             console.log(endereco);
-            this.router.navigate(['/index']);
+            this.router.navigate(['/endereco-detalhes']);
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')
@@ -56,7 +57,7 @@ export class EnderecoCadastroComponent {
         this.service.updateEndereco(this.crudForm.value).subscribe({
           next: (endereco: Endereco) => {
               console.log(endereco);
-              this.router.navigate(['/index']);
+              this.router.navigate(['/endereco-detalhes']);
             },
             error: (erro: any) => console.log(erro),
             complete: () => console.log('Finalizado')

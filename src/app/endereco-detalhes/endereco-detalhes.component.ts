@@ -26,48 +26,42 @@ export class EnderecoDetalhesComponent {
       })
       
       constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
-        private service: ServicoService, private router: Router){}
+        private service: ServicoService, private router: Router) {}
         
       ngOnInit(): void {
-        this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
-    
-        if(this.id>0){
-          this.isNew = false;
-          this.service.getEnderecoByID(this.id).subscribe({
-           next: (endereco: Endereco) => this.crudForm.setValue(endereco),
-           error: (erro: any) => console.log(erro),
-           complete: () => console.log('finalizado')
-          });
-        } else {
-          this.isNew = true; 
-        }
-      }
        
-      salvar(): void {
-        if(this.isNew){
-          this.service.addEndereco(this.crudForm.value).subscribe({
-            next: (endereco: Endereco) =>{
-              console.log(endereco);
-              this.router.navigate(['/index']);
-            },
-            error: (erro: any) => console.log(erro),
-            complete: () => console.log('Finalizado')
+        this.service.getEndereco().subscribe({
+          next: (endereco: Endereco[]) => this.endereco = endereco,
+          error: (erro) => console.log(erro),
+          complete: () => console.log('Requisicao finalizada')
           });
-        } else {
-          this.service.updateEndereco(this.crudForm.value).subscribe({
-            next: (endereco: Endereco) => {
-                console.log(endereco);
-                this.router.navigate(['/index']);
-              },
-              error: (erro: any) => console.log(erro),
-              complete: () => console.log('Finalizado')
-          });
-        }
-      }
+        } 
+    //  }
+       
+      // salvar(): void {
+      //   if(this.isNew){
+      //     this.service.addEndereco(this.crudForm.value).subscribe({
+      //       next: (endereco: Endereco) =>{
+      //         console.log(endereco);
+      //         this.router.navigate(['/index']);
+      //       },
+      //       error: (erro: any) => console.log(erro),
+      //       complete: () => console.log('Finalizado')
+      //     });
+      //   } else {
+      //     this.service.updateEndereco(this.crudForm.value).subscribe({
+      //       next: (endereco: Endereco) => {
+      //           console.log(endereco);
+      //           this.router.navigate(['/index']);
+      //         },
+      //         error: (erro: any) => console.log(erro),
+      //         complete: () => console.log('Finalizado')
+      //     });
+      //   }
+      // }
     
-      deletar(): void {
-        if (!this.isNew){
-          this.service.deletarEndereco(this.id!).subscribe({
+      deletar(id: number): void {
+          this.service.deletarEndereco(id).subscribe({
             next: (endereco: Endereco) =>{
               console.log(endereco);
               this.router.navigate(['/index'])
@@ -76,5 +70,4 @@ export class EnderecoDetalhesComponent {
             complete: () => console.log('Finalizado')
           });
         }
-      }
     }

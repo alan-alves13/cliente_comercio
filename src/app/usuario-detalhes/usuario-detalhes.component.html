@@ -1,7 +1,8 @@
 <div class="body"  style="padding-bottom: 15%;padding: 2% 5%;">
         <h1>PERFIL</h1>
         <label style="margin-left: 12%;"> Aqui você tem acesso ao seu perfil, podendo editar e deletar</label>
-        <button class="button-cad" pButton routerLink="/menu-cliente" type="button" label="Voltar" style="margin-left: 12%;margin-bottom: 2%;"></button>
+        <button class="button-log" pButton pRipple type="button" routerLink="/endereco-detalhes" style="margin-left:40%;" label="Endereço"></button>
+        <button class="button-cad" pButton routerLink="/menu-cliente" type="button" label="Voltar" style="margin-left: 30%;margin-bottom: 2%;"></button>
             <p-table [value]="usuarios" dataKey="id" selectionMode="single">
         
                 <ng-template pTemplate="header">
