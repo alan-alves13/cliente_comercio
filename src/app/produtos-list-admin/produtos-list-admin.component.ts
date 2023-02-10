@@ -39,7 +39,9 @@ export class ProdutosListAdminComponent implements OnInit{
       },
       error: (erro: any) => console.log(erro),
       complete: () => console.log('Finalizado')
+      
     });
+   
   }
 
 
