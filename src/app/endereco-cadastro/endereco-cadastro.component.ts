@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
 import { Endereco } from '../endereco';
+import { HttpClient } from '@angular/common/http';
+import { Usuario } from '../usuarios';
+
 
 @Component({
   selector: 'app-endereco-cadastro',
@@ -14,21 +17,27 @@ export class EnderecoCadastroComponent {
    
     id?: number;
     isNew = true;
+    crudForm!: FormGroup;
+
+    server_url_endereco = "https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/endereco/";
     
-    crudForm: FormGroup = this.formBuilder.group({
-      logradouro: ['', Validators.required],
-      cep: ['', Validators.required],
-      numero: ['', Validators.required],
-      uf: ['', Validators.required],
-      cidade: ['', Validators.required],
-      complemento: ['', Validators.required],
-      id_usuario: ['', Validators.required]
-    })
+   
     
     constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
-      private service: ServicoService, private router: Router){}
+      private service: ServicoService, private router: Router, private httpClient: HttpClient){}
       
     ngOnInit(): void {
+
+      this.crudForm = this.formBuilder.group({
+        logradouro: ['', Validators.required],
+        cep: ['', Validators.required],
+        numero: ['', Validators.required],
+        uf: ['', Validators.required],
+        cidade: ['', Validators.required],
+        complemento: ['', Validators.required],
+        id_usuario: ['', Validators.required]
+      })
+
       this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
   
       if(this.id>0){
@@ -44,6 +53,41 @@ export class EnderecoCadastroComponent {
     }
      
     salvar(): void {
+   
+      const formData = new FormData();
+
+      formData.append('logradouro', this.crudForm.get('logradouro')?.value);
+  
+      formData.append('cep', this.crudForm.get('cep')?.value);
+ 
+      formData.append('numero', this.crudForm.get('numero')?.value);
+ 
+      formData.append('uf', this.crudForm.get('uf')?.value);
+ 
+      formData.append('cidade', this.crudForm.get('cidade')?.value);
+      
+      formData.append('complemento', this.crudForm.get('complemento')?.value);
+
+      formData.append('id_usuario', this.crudForm.get('id_usuario')?.value);
+ 
+
+      this.httpClient.post(this.server_url_endereco, formData).subscribe(
+            res => {
+             console.log(res);
+             alert('cadastro realizado com sucesso');
+             this.router.navigate(['/endereco-detalhes']);
+            }
+      )
+    
+     next: (endereco: Endereco) =>{
+       console.log(endereco);
+       this.router.navigate(['/endereco-detalhes']);
+     }
+
+
+
+
+   /*
       if(this.isNew){
         this.service.addEndereco(this.crudForm.value).subscribe({
           next: (endereco: Endereco) =>{ 
@@ -62,7 +106,7 @@ export class EnderecoCadastroComponent {
             error: (erro: any) => console.log(erro),
             complete: () => console.log('Finalizado')
         });
-      }
+      }  */
     }
   
     deletar(): void {

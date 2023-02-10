@@ -67,7 +67,7 @@ export class ProdutoCadastroComponent implements OnInit {
      this.httpClient.post(this.server_url_produto, formData).subscribe(
            res => {
             console.log(res);
-            alert('foto salva com sucesso');
+            alert('cadastro realizado com sucesso');
             this.router.navigate(['/produtoslistagem']);
            }
      )
