@@ -24,6 +24,15 @@ import { Router } from '@angular/router';
         complete: () => console.log('Requisicao finalizada')
       });
     }
-    
+    deletar(id: number): void {
+      this.servico.deletarUsuario(id).subscribe({
+        next: (usuario: Usuario) =>{
+          console.log(usuario);
+          this.router.navigate(['/usuarios-listagem'])
+        },
+        error: (erro: any) => console.log(erro),
+        complete: () => console.log('Finalizado')
+      });
+    }
   }
   

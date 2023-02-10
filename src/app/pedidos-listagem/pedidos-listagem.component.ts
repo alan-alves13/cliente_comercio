@@ -23,5 +23,14 @@ constructor(private servico: ServicoService, private router: Router) {}
     });
    
   }
-
+  deletar(id: number): void {
+    this.servico.deletarPedido(id).subscribe({
+      next: (pedido: Pedidos) =>{
+        console.log(pedido);
+        this.router.navigate(['/pedidos-listagem'])
+      },
+      error: (erro: any) => console.log(erro),
+      complete: () => console.log('Finalizado')
+    });
+  }
 }

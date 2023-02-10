@@ -17,13 +17,13 @@
         
         <ng-template pTemplate="body" let-usuario>
             <tr [pSelectableRow]="usuarios">
-                <td>{{usuario.id}}</td>
+                <td>{{usuario.id_usuario}}</td>
                 <td>{{usuario.nome}}</td>
                 <td>{{usuario.cpf}}</td>
                 <td>{{usuario.data_nascimento | date: 'dd/MM/yyyy'}}</td>
                 <td>{{usuario.email}}</td>
                 <td>{{usuario.foto}}</td>
-                <button class="button-del" pButton pRipple type="button" routerLink="/deletar" label="DELETAR"></button>
+                <button class="button-del" pButton pRipple type="button" label="DELETAR" (click)="deletar(usuario.id_usuario)"></button>
             </tr>
         </ng-template>
     </p-table>
