@@ -19,6 +19,8 @@
                 <td>{{pedidos.status}}</td>
                 <td>{{pedidos.id_usuario}}</td>
                 <td>{{pedidos.data | date: 'HH:mm dd/MM/yyyy'}}</td>
+                <button class="button-cad" pButton pRipple type="button" routerLink="/itempedido-listagem/" style="margin-left:5px;background-color:#0FBD90;" label="Ver Itens"></button>
+                <button class="button-cad" pButton pRipple type="button" routerLink="/pedido-edit/{{pedidos.id}}" style="margin-left:5px;margin-top: 5%;" label="EDITAR"></button>
                 <button class="button-del" pButton pRipple type="button" label="DELETAR" (click)="deletar(pedidos.id)"></button>
             </tr>
         </ng-template>

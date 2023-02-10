@@ -27,7 +27,7 @@
                     <td>{{endereco.cidade}}</td>
                     <td>{{endereco.uf}}</td>
                     <td>{{endereco.complemento}}</td>
-                    <button class="button-cad" pButton pRipple type="button" routerLink="/endereco-edit" style="margin-left:5px;margin-top: 5%;" label="EDITAR"></button>
+                    <button class="button-cad" pButton pRipple type="button" routerLink="/endereco-edit/{{endereco.id}}" style="margin-left:5px;margin-top: 5%;" label="EDITAR"></button>
                     <button class="button-del" pButton pRipple type="button" label="DELETAR" (click)="deletar(endereco.id)"></button>
                 </tr>
             </ng-template>

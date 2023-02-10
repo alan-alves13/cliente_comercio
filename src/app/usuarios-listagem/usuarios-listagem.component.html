@@ -23,6 +23,7 @@
                 <td>{{usuario.data_nascimento | date: 'dd/MM/yyyy'}}</td>
                 <td>{{usuario.email}}</td>
                 <td>{{usuario.foto}}</td>
+                <button class="button-cad" pButton pRipple type="button" routerLink="/usuario-edit/{{usuario.id_usuario}}" style="margin-left:5px;margin-top: 5%;" label="EDITAR"></button>
                 <button class="button-del" pButton pRipple type="button" label="DELETAR" (click)="deletar(usuario.id_usuario)"></button>
             </tr>
         </ng-template>

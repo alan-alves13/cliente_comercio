@@ -16,6 +16,8 @@ export class EnderecoEditComponent {
       isNew = true;
       
       crudForm: FormGroup = this.formBuilder.group({
+        id:[0],
+        id_usuario: ['', Validators.required],
         logradouro: ['', Validators.required],
         cep: ['', Validators.required],
         numero: ['', Validators.required],

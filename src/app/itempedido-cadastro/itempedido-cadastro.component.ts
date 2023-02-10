@@ -7,18 +7,20 @@ import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pedido-cadastro',
-  templateUrl: './pedido-cadastro.component.html',
-  styleUrls: ['./pedido-cadastro.component.css']
+  selector: 'app-itempedido-cadastro',
+  templateUrl: './itempedido-cadastro.component.html',
+  styleUrls: ['./itempedido-cadastro.component.css']
 })
-export class PedidoCadastroComponent {
-  
+export class ItempedidoCadastroComponent {
+
   id?: number;
   isNew = true;
   
   crudForm: FormGroup = this.formBuilder.group({
-    id_usuario: ['', Validators.required]
-    
+
+    pedido: ['', Validators.required],
+    produto: ['', Validators.required],
+    quantidade: ['', Validators.required]
   })
   
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
@@ -26,25 +28,23 @@ export class PedidoCadastroComponent {
     
   salvar(): void {
     if(this.isNew){
-      this.service.addPedido(this.crudForm.value).subscribe({
-        next: (pedidos: Pedidos) =>{
-          console.log(pedidos);
-          this.router.navigate(['/pedidos-listagem']);
+      this.service.addItemPedido(this.crudForm.value).subscribe({
+        next: (itempedido: ItemPedido) =>{
+          console.log(itempedido);
+          this.router.navigate(['/itempedido-listagem']);
         },
         error: (erro: any) => console.log(erro),
         complete: () => console.log('Finalizado')
       });
     } else {
-      this.service.updatePedido(this.crudForm.value).subscribe({
-        next: (pedidos: Pedidos) => {
-            console.log(pedidos);
-            this.router.navigate(['/pedidos-listagem']);
+      this.service.updateItemPedido(this.crudForm.value).subscribe({
+        next: (itempedido: ItemPedido) => {
+            console.log(itempedido);
+            this.router.navigate(['/itempedido-listagem']);
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')
       });
     }
   }
-
- 
 }

@@ -1,0 +1,43 @@
+<div class="body">
+    <form [formGroup]="crudForm">
+        <h1>EDITE O ITEM</h1>
+            <br/>
+              <div style="margin:2%;">
+                <label>ID do Pedido: </label>
+                <input type="text" pInputText formControlName="pedido" style="width:240px;"/>
+                    <br/>
+                 <label>ID do Produto: </label>
+                <input type="text" pInputText formControlName="produto" style="width:240px;"/>
+                    <br/>
+                <label>Quantidade: </label>
+                <input type="text" formControlName="quantidade" style="width:280px;"/>
+                    <br/>
+              </div>
+            <div style="text-align:center;padding-top:1%;">
+                <button class="button-log" pButton pRipple type="button" (click)="salvar()" label="Salvar"></button>
+                <button class="button-log" pButton routerLink="/itempedido-listagem" type="button" label="Voltar"></button>
+            </div>
+    </form>
+</div>
+
+<div class="footer">
+  <div class="footer-t">
+   <h3> Redes Sociais:</h3>
+      @portal_eletronicos
+      <br/>
+      Portal_eletronicos
+    </div>
+    <div class="footer-t1">
+    <h3> Contato: </h3>
+        0800 0001 2000
+      <br/>
+      (84) 3254 4565
+    </div>
+    <div class="footer-t">
+    <h3>  Endereço: </h3>
+      Rua Triunfo, 00
+      <br/>
+      59000-000, Natal RN
+    </div>
+</div>
+    

@@ -73,7 +73,8 @@ export class UsuarioCadastroComponent {
       formData.append('nome', this.crudForm.get('nome')?.value);
       formData.append('cpf', this.crudForm.get('cpf')?.value);
       formData.append('email', this.crudForm.get('email')?.value);
-      formData.append('senha', this.crudForm.get('data_nascimento')?.value);
+      formData.append('senha', this.crudForm.get('senha')?.value);
+      formData.append('data_nascimento', this.crudForm.get('data_nascimento')?.value);
       formData.append('client', this.crudForm.get('cliente')?.value);
       formData.append('administrador', this.crudForm.get('administrador')?.value);
       formData.append('foto', this.crudForm.get('foto')?.value);
@@ -81,20 +82,25 @@ export class UsuarioCadastroComponent {
 
     this.httpClient.post(this.server_url_usuario, formData).subscribe(
       res => {
-      console.log(res);
-      alert('cadastro realizado com sucesso');
-      this.router.navigate(['/index']);
+        console.log(res);
+        alert('cadastro realizado com sucesso');
+        if (this.crudForm.get('administrador')?.value == true) {
+        this.router.navigate(['/menu-admin']); 
+        } else if (this.crudForm.get('cliente')?.value == true) {
+          this.router.navigate(['/menu-cliente']); 
         }
+      }
   )
-     
-
-
-
+    
     } else {
       this.service.updateUsuario(this.crudForm.value).subscribe({
         next: (usuario: Usuario) => {
             console.log(usuario);
-            this.router.navigate(['/index']);
+            if (usuario.administrador == true) {
+              this.router.navigate(['/menu-admin']); 
+              } else if (usuario.cliente == true) {
+                this.router.navigate(['/menu-cliente']); 
+              }
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')
@@ -107,7 +113,8 @@ export class UsuarioCadastroComponent {
       this.service.deletarUsuario(this.id!).subscribe({
         next: (usuario: Usuario) =>{
           console.log(usuario);
-          this.router.navigate(['/index'])
+            location.reload();
+          this.router.navigate(['/usuario-listagem'])
         },
         error: (erro: any) => console.log(erro),
         complete: () => console.log('Finalizado')

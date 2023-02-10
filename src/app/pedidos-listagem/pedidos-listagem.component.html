@@ -7,6 +7,7 @@
         <ng-template pTemplate="header">
             <tr>
                 <th>ID do Pedido:</th>
+                 <th>ID do Usuário:</th>
                 <th>Status:</th>
                 <th>Data:</th>
                 <!-- <th>Itens:</th>
@@ -17,6 +18,7 @@
         <ng-template pTemplate="body" let-pedidos>
             <tr [pSelectableRow]="pedidos"> 
                 <td>{{pedidos.id}}</td>
+                <td>{{pedidos.id_usuario}}</td>
                 <td *ngIf="pedidos.status == 1">Cadastrado</td>
                 <td *ngIf="pedidos.status == 2">Faturado</td>
                 <td *ngIf="pedidos.status == 3">Analise</td>

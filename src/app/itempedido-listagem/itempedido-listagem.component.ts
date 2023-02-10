@@ -25,6 +25,7 @@ constructor(private servico: ServicoService, private router: Router) {}
     this.servico.deletarItemPedido(id).subscribe({
       next: (ItemPedido: ItemPedido) =>{
         console.log(ItemPedido);
+        location.reload();
         this.router.navigate(['/itempedido-listagem'])
       },
       error: (erro: any) => console.log(erro),

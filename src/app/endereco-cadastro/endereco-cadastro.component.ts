@@ -109,16 +109,5 @@ export class EnderecoCadastroComponent {
       }  */
     }
   
-    deletar(): void {
-      if (!this.isNew){
-        this.service.deletarEndereco(this.id!).subscribe({
-          next: (endereco: Endereco) =>{
-            console.log(endereco);
-            this.router.navigate(['/index'])
-          },
-          error: (erro: any) => console.log(erro),
-          complete: () => console.log('Finalizado')
-        });
-      }
-    }
+
   }

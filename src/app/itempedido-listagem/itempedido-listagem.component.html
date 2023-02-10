@@ -1,7 +1,7 @@
 <div class="body" style="padding-bottom: 15%;padding: 2% 5%;">
     <h1>ITENS DO PEDIDO</h1>
     <br/>
-    <button class="button-log" pButton pRipple type="button" routerLink="/pedido-cadastro" style="margin-left:30%;" label="Adicionar Item"></button>
+    <button class="button-log" pButton pRipple type="button" routerLink="/itempedido-cadastro" style="margin-left:30%;" label="Adicionar Item"></button>
     <button class="button-cad" pButton routerLink="/pedidos-listagem" type="button" label="Voltar" style="margin-left: 25%;margin-bottom: 2%;"></button>
     <p-table [value]="itempedido" dataKey="id" selectionMode="single" [(selection)]="selectedObject">
         <ng-template pTemplate="header">
@@ -17,6 +17,7 @@
                 <td>{{itempedido.id}}</td>
                 <td>{{itempedido.produto}}</td>
                 <td>{{itempedido.quantidade}}</td>
+                <button class="button-cad" pButton pRipple type="button" routerLink="/itempedido-edit/{{itempedido.id}}" style="margin-left:5px;margin-top: 5%;" label="EDITAR"></button>
                 <button class="button-del" pButton pRipple type="button" label="DELETAR" (click)="deletar(itempedido.id)"></button> 
             </tr>
         </ng-template>

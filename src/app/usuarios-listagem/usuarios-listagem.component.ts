@@ -28,6 +28,7 @@ import { Router } from '@angular/router';
       this.servico.deletarUsuario(id).subscribe({
         next: (usuario: Usuario) =>{
           console.log(usuario);
+          location.reload();
           this.router.navigate(['/usuarios-listagem'])
         },
         error: (erro: any) => console.log(erro),

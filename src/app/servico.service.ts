@@ -112,7 +112,11 @@ export class ServicoService {
     return this.http.get<ItemPedido[]>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/');
    
   }
+  getItemPedidoByID(id: number): Observable<ItemPedido>{
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/${id}/`;
 
+   return this.http.get<ItemPedido>(url);
+ }
   addItemPedido(ItemPedido: ItemPedido): Observable<ItemPedido>{
     return this.http.post<ItemPedido>('https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/', ItemPedido);
      

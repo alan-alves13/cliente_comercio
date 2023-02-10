@@ -31,6 +31,9 @@ import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
 import { EnderecoCadastroComponent } from './endereco-cadastro/endereco-cadastro.component';
 import { EnderecoDetalhesComponent } from './endereco-detalhes/endereco-detalhes.component';
 import { EnderecoEditComponent } from './endereco-edit/endereco-edit.component';
+import { ItempedidoEditComponent } from './itempedido-edit/itempedido-edit.component';
+import { ItempedidoCadastroComponent } from './itempedido-cadastro/itempedido-cadastro.component';
+import { PedidoEditComponent } from './pedido-edit/pedido-edit.component';
 
 
 @NgModule({
@@ -55,7 +58,10 @@ import { EnderecoEditComponent } from './endereco-edit/endereco-edit.component';
     UsuarioEditComponent,
     EnderecoCadastroComponent,
     EnderecoDetalhesComponent,
-    EnderecoEditComponent
+    EnderecoEditComponent,
+    ItempedidoEditComponent,
+    ItempedidoCadastroComponent,
+    PedidoEditComponent
   ],
   imports: [
     BrowserModule,

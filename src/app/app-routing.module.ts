@@ -12,7 +12,6 @@ import { PedidosListagemComponent } from './pedidos-listagem/pedidos-listagem.co
 import { PedidosDetalhesComponent } from './pedidos-detalhes/pedidos-detalhes.component';
 import { UsuariosListagemComponent } from './usuarios-listagem/usuarios-listagem.component';
 import { ProdutoCadastroComponent } from './produto-cadastro/produto-cadastro.component';
-import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
 import { ProdutosListAdminComponent } from './produtos-list-admin/produtos-list-admin.component';
 import { PedidosListAdminComponent } from './pedidos-list-admin/pedidos-list-admin.component';
 import { ItempedidoListagemComponent } from './itempedido-listagem/itempedido-listagem.component';
@@ -20,6 +19,10 @@ import { EnderecoCadastroComponent } from './endereco-cadastro/endereco-cadastro
 import { EnderecoEditComponent } from './endereco-edit/endereco-edit.component';
 import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
 import { EnderecoDetalhesComponent } from './endereco-detalhes/endereco-detalhes.component';
+import { PedidoCadastroComponent } from './pedido-cadastro/pedido-cadastro.component';
+import { PedidoEditComponent } from './pedido-edit/pedido-edit.component';
+import { ItempedidoCadastroComponent } from './itempedido-cadastro/itempedido-cadastro.component';
+import {  ItempedidoEditComponent } from './itempedido-edit/itempedido-edit.component';
 
 const routes: Routes = [
   {path: 'produtoslistagem', component: ProdutoListagemComponent},
@@ -43,6 +46,10 @@ const routes: Routes = [
   {path: 'endereco-edit/:id', component: EnderecoEditComponent},
   {path: 'usuario-edit/:id', component: UsuarioEditComponent},
   {path: 'endereco-detalhes', component: EnderecoDetalhesComponent},
+  {path: 'pedido-cadastro', component: PedidoCadastroComponent},
+  {path: 'pedido-edit/:id', component: PedidoEditComponent},
+  {path: 'itempedido-cadastro', component: ItempedidoCadastroComponent},
+  {path: 'itempedido-edit/:id', component: ItempedidoEditComponent},
   {path: '', redirectTo: '/index', pathMatch: 'full'}
 
 ];

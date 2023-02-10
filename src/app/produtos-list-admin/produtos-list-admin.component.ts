@@ -35,6 +35,7 @@ export class ProdutosListAdminComponent implements OnInit{
     this.servico.detelarProduto(id).subscribe({
       next: (produto: Produto) =>{
         console.log(produto);
+        location.reload();
         this.router.navigate(['/produtos-list-admin'])
       },
       error: (erro: any) => console.log(erro),

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ServicoService } from '../servico.service';
@@ -10,39 +10,37 @@ import { Usuario } from '../usuarios';
   templateUrl: './usuario-edit.component.html',
   styleUrls: ['./usuario-edit.component.css']
 })
-export class UsuarioEditComponent {
+export class UsuarioEditComponent implements OnInit {
 
-    id?: number;
+    id_usuario?: number;
     isNew = true;
    
     crudForm: FormGroup = this.formBuilder.group({
+      id_usuario: [0],
       nome: ['', Validators.required],
       cpf: ['', Validators.required],
       email: ['', Validators.required],
       senha: ['', Validators.required],
       data_nascimento: ['', Validators.required],
       cliente:[],     
-      administrador:[],
-      foto: ['', Validators.required]
+      administrador:[]
+   
     })
     
     constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
       private service: ServicoService, private router: Router){}
       
     ngOnInit(): void {
-      this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
+      this.id_usuario = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
      
-      if(this.id>0){
-        this.isNew = false;
-        this.service.getUsuarioByID(this.id).subscribe({
+        this.service.getUsuarioByID(this.id_usuario).subscribe({
          next: (usuario: Usuario) => this.crudForm.setValue(usuario),
          error: (erro: any) => console.log(erro),
          complete: () => console.log('finalizado')
         });
-      } else {
-        this.isNew = true; 
-      }
-    }
+      } 
+      
+    
     onFileSelected(event: any) {
       if (event.target.files.length>0){
         const file = event.target.files[0];
@@ -55,7 +53,11 @@ export class UsuarioEditComponent {
         this.service.addUsuario(this.crudForm.value).subscribe({
           next: (usuario: Usuario) =>{
             console.log(usuario);
-            this.router.navigate(['/index']);
+            if (usuario.administrador == true) {
+              this.router.navigate(['/menu-admin']); 
+              } else if (usuario.cliente == true) {
+                this.router.navigate(['/menu-cliente']); 
+              }
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')
@@ -64,7 +66,11 @@ export class UsuarioEditComponent {
         this.service.updateUsuario(this.crudForm.value).subscribe({
           next: (usuario: Usuario) => {
               console.log(usuario);
-              this.router.navigate(['/index']);
+              if (usuario.administrador == true) {
+                this.router.navigate(['/usuario-detalhes']); 
+                } else if (usuario.cliente == true) {
+                  this.router.navigate(['/usuario-detalhes']); 
+                }
             },
             error: (erro: any) => console.log(erro),
             complete: () => console.log('Finalizado')
@@ -74,10 +80,11 @@ export class UsuarioEditComponent {
   
     deletar(): void {
       if (!this.isNew){
-        this.service.deletarUsuario(this.id!).subscribe({
+        this.service.deletarUsuario(this.id_usuario!).subscribe({
           next: (usuario: Usuario) =>{
             console.log(usuario);
-            this.router.navigate(['/index'])
+            location.reload();
+            this.router.navigate(['/usuario-detalhes'])
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')

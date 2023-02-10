@@ -1,16 +1,15 @@
 <div class="body">
     <form [formGroup]="crudForm">
-        <h1> CADASTRAR PEDIDO</h1>
-        <label style="margin-bottom:5%;"> Adicione o Id do usuário do pedido
-        <br/> Depois você irá adicionar os produtos do pedido</label>
+        <h1> EDITE O PEDIDO</h1>
             <br/>
               <div style="margin:2%;">
                  <label>ID do Usuário: </label>
                 <input type="text" pInputText formControlName="id_usuario" style="width:280px;"/>
                     <br/>
+              
               </div>
             <div style="text-align:center;padding-top:1%;">
-                <button class="button-log" pButton pRipple type="button" (click)="salvar()" label="CADASTRAR"></button>
+                <button class="button-log" pButton pRipple type="button" (click)="salvar()" label="SALVAR"></button>
                 <button class="button-log" pButton routerLink="/menu-cliente" type="button" label="Voltar"></button>
             </div>
     </form>

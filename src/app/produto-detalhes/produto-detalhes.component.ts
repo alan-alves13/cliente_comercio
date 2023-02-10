@@ -23,6 +23,7 @@ export class ProdutoDetalhesComponent implements OnInit {
     categoria: [0, Validators.required],
     descricao: ['', Validators.required]
    
+   
   })
   
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder,
@@ -48,7 +49,7 @@ export class ProdutoDetalhesComponent implements OnInit {
       this.service.updateProduto(this.crudForm.value).subscribe({
         next: (produto: Produto) =>{
           console.log(produto);
-          this.router.navigate(['/produtoslistagem']);
+          this.router.navigate(['/produtos-list-admin']);
         },
         error: (erro: any) => console.log(erro),
         complete: () => console.log('Finalizado')
@@ -57,7 +58,7 @@ export class ProdutoDetalhesComponent implements OnInit {
       this.service.updateProduto(this.crudForm.value).subscribe({
         next: (produto: Produto) => {
             console.log(produto);
-            this.router.navigate(['/produtoslistagem']);
+            this.router.navigate(['/produtos-list-admin']);
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')
@@ -71,7 +72,8 @@ export class ProdutoDetalhesComponent implements OnInit {
       this.service.detelarProduto(this.id!).subscribe({
         next: (produto: Produto) =>{
           console.log(produto);
-          this.router.navigate(['/produtoslistagem'])
+          location.reload();
+          this.router.navigate(['/produtos-list-admin'])
         },
         error: (erro: any) => console.log(erro),
         complete: () => console.log('Finalizado')

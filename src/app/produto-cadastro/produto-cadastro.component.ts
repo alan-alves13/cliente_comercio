@@ -68,13 +68,13 @@ export class ProdutoCadastroComponent implements OnInit {
            res => {
             console.log(res);
             alert('cadastro realizado com sucesso');
-            this.router.navigate(['/produtoslistagem']);
+            this.router.navigate(['/produtos-list-admin']);
            }
      )
    
     next: (produto: Produto) =>{
       console.log(produto);
-      this.router.navigate(['/produtoslistagem'])
+      this.router.navigate(['/produtos-list-admin'])
     }
     
   }
@@ -84,7 +84,8 @@ export class ProdutoCadastroComponent implements OnInit {
       this.service.detelarProduto(this.id!).subscribe({
         next: (produto: Produto) =>{
           console.log(produto);
-          this.router.navigate(['/produtoslistagem'])
+          location.reload();
+          this.router.navigate(['/produtos-list-admin'])
         },
         error: (erro: any) => console.log(erro),
         complete: () => console.log('Finalizado')

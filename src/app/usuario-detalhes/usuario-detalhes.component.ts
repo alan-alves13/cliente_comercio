@@ -20,22 +20,27 @@ import { Usuario } from '../usuarios';
     
       constructor(private route: ActivatedRoute, private service: ServicoService, private router: Router){}
       ngOnInit(): void {
-        this.id = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id')!):0;
-    
-          this.isNew = false;
-          this.service.getUsuarioByID(this.id).subscribe({
-          next: (usuarios: Usuario) => usuarios,
-           error: (erro: any) => console.log(erro),
-           complete: () => console.log('finalizado')
+        this.service.getUsuario().subscribe({
+          next: (usuarios: Usuario[]) => this.usuarios = usuarios,
+          error: (erro) => console.log(erro),
+          complete: () => console.log('Requisicao finalizada')
           });
         } 
 
         
-  editar(): void {
-   
-          this.router.navigate(['/usuario-edit/' + this.id]);
-      
-    }
+        deletar(id: number): void {
+          if (!this.isNew){
+            this.service.deletarUsuario(this.id!).subscribe({
+              next: (usuario: Usuario) =>{
+                console.log(usuario);
+                this.router.navigate(['/usuario-listagem'])
+                location.reload();
+              },
+              error: (erro: any) => console.log(erro),
+              complete: () => console.log('Finalizado')
+            });
+          }
+        }
   }
 
        

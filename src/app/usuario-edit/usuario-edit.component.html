@@ -3,6 +3,9 @@
         <h1> EDITE SEU CADASTRO</h1>
             <br/>
             <div class="dadosUser" style="display: inline-block;"> 
+                <label>ID: </label>
+                <label>{{ id_usuario }}</label>
+                    <br/>
                 <label>Nome: </label>
                 <input type="text" pInputText formControlName="nome" style="width:280px;"/>
                     <br/>
@@ -23,9 +26,6 @@
                 <label>Cliente</label>
                 <input type="checkbox" formControlName="administrador"/> 
                 <label>Administrador</label>
-                    <br/>
-                <label>Foto:</label>
-                <input type="file" formControlName="foto" (change)="onFileSelected($event)" style="color: white;"> 
             </div>
             
             <div style="text-align:center;padding-top:1%;">

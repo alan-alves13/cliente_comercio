@@ -7,11 +7,11 @@ import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-pedido-cadastro',
-  templateUrl: './pedido-cadastro.component.html',
-  styleUrls: ['./pedido-cadastro.component.css']
+  selector: 'app-pedido-edit',
+  templateUrl: './pedido-edit.component.html',
+  styleUrls: ['./pedido-edit.component.css']
 })
-export class PedidoCadastroComponent {
+export class PedidoEditComponent {
   
   id?: number;
   isNew = true;
@@ -29,7 +29,7 @@ export class PedidoCadastroComponent {
       this.service.addPedido(this.crudForm.value).subscribe({
         next: (pedidos: Pedidos) =>{
           console.log(pedidos);
-          this.router.navigate(['/pedidos-listagem']);
+          this.router.navigate(['/index']);
         },
         error: (erro: any) => console.log(erro),
         complete: () => console.log('Finalizado')
@@ -38,13 +38,11 @@ export class PedidoCadastroComponent {
       this.service.updatePedido(this.crudForm.value).subscribe({
         next: (pedidos: Pedidos) => {
             console.log(pedidos);
-            this.router.navigate(['/pedidos-listagem']);
+            this.router.navigate(['/index']);
           },
           error: (erro: any) => console.log(erro),
           complete: () => console.log('Finalizado')
       });
     }
   }
-
- 
 }

@@ -64,7 +64,8 @@ export class EnderecoDetalhesComponent {
           this.service.deletarEndereco(id).subscribe({
             next: (endereco: Endereco) =>{
               console.log(endereco);
-              this.router.navigate(['/index'])
+              location.reload();
+              this.router.navigate(['/endereco-detalhes'])
             },
             error: (erro: any) => console.log(erro),
             complete: () => console.log('Finalizado')
