@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Produto } from '../produtos';
 import { ServicoService } from '../servico.service';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-produtos-list-admin',
@@ -14,7 +16,13 @@ export class ProdutosListAdminComponent implements OnInit{
   
   selectedObject?: Produto;
 
-  constructor(private servico: ServicoService, private router: Router) {}
+  server_url_produto = "https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/";
+
+  crudForm!: FormGroup;
+
+
+  constructor(private servico: ServicoService, private router: Router, private httpClient: HttpClient) {}
+
   ngOnInit(): void {
     this.servico.getProduto().subscribe({
       next: (produtos: Produto[]) => this.produtos = produtos,
@@ -22,6 +30,19 @@ export class ProdutosListAdminComponent implements OnInit{
       complete: () => console.log('Requisicao finalizada')
     });
   }
+
+  deletar(id: number): void {
+    this.servico.detelarProduto(id).subscribe({
+      next: (produto: Produto) =>{
+        console.log(produto);
+        this.router.navigate(['/produtos-list-admin'])
+      },
+      error: (erro: any) => console.log(erro),
+      complete: () => console.log('Finalizado')
+    });
+  }
+
+
   
 }
 

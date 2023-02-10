@@ -27,7 +27,11 @@
                 <td>{{produto.preco}}</td>
                 <td>{{produto.quantidade_estoque}}</td>
                 <button class="button-cad" pButton pRipple type="button" routerLink="/produtosdetalhe/{{produto.id}}" style="margin-left:5px;" label="Editar"></button>
+                <button class="button-del" pButton pRipple type="button" (click)="deletar(produto.id)" label="DELETAR"></button>
+                <!--
                 <button class="button-del" pButton pRipple type="button" routerLink="/deletar" label="DELETAR"></button>
+                -->
+            
             </tr>
         </ng-template>
     </p-table>

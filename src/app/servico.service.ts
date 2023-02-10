@@ -35,7 +35,7 @@ export class ServicoService {
       }
   
   getProdutoByID(id: number): Observable<Produto>{
-      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${id}`;
+      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${id}/`;
 
     return this.http.get<Produto>(url);
   }
@@ -46,13 +46,13 @@ export class ServicoService {
   } */
 
   updateProduto(produto: Produto): Observable<Produto>{
-    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${produto.id}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${produto.id}/`;
 
    return this.http.put<Produto>(url, produto);
   }
 
   detelarProduto(id: number): Observable<Produto>{
-    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${id}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/produtos/${id}/`;
   // const url = `http://localhost:3000/produtos/${id}`;
 
    return this.http.delete<Produto>(url);
@@ -63,7 +63,7 @@ export class ServicoService {
 
   }
   getUsuarioByID(id_usuario: number): Observable<Usuario>{
-     const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${id_usuario}`;
+     const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${id_usuario}/`;
 
     return this.http.get<Usuario>(url);
   }
@@ -74,13 +74,13 @@ export class ServicoService {
   }
 
   updateUsuario(usuario: Usuario): Observable<Usuario>{
-     const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${usuario.id_usuario}`;
+     const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${usuario.id_usuario}/`;
 
    return this.http.put<Usuario>(url, usuario);
   }
 
   deletarUsuario(id_usuario: number): Observable<Usuario>{
-    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${id_usuario}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/usuario/${id_usuario}/`;
  
    return this.http.delete<Usuario>(url);
   }
@@ -96,13 +96,13 @@ export class ServicoService {
    }
  
   updatePedido(pedidos: Pedidos): Observable<Pedidos>{
-      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/pedidos/${pedidos.id}`;
+      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/pedidos/${pedidos.id}/`;
  
     return this.http.put<Pedidos>(url, pedidos);
   }
 
   deletarPedido(id: number): Observable<Pedidos>{
-    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/pedidos/${id}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/pedidos/${id}/`;
  
    return this.http.delete<Pedidos>(url);
   }
@@ -119,13 +119,13 @@ export class ServicoService {
    }
  
    updateItemPedido(ItemPedido: ItemPedido): Observable<ItemPedido>{
-      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/${ItemPedido.id}`;
+      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/${ItemPedido.id}/`;
  
     return this.http.put<ItemPedido>(url, ItemPedido);
    }
 
    deletarItemPedido(id: number): Observable<ItemPedido>{
-    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/${id}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/itempedido/${id}/`;
  
    return this.http.delete<ItemPedido>(url);
   }
@@ -136,7 +136,7 @@ export class ServicoService {
   }
 
   getEnderecoByID(id: number): Observable<Endereco>{
-    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/endereco/${id}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/endereco/${id}/`;
 
     return this.http.get<Endereco>(url);
   }
@@ -147,13 +147,13 @@ export class ServicoService {
   }
  
   updateEndereco(Endereco: Endereco): Observable<Endereco>{
-      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/endereco/${Endereco.id}`;
+      const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/endereco/${Endereco.id}/`;
  
     return this.http.put<Endereco>(url, Endereco);
   }
 
   deletarEndereco(id: number): Observable<Endereco>{
-    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/endereco/${id}`;
+    const url = `https://t2oglps6h0.execute-api.us-east-1.amazonaws.com/dev/endereco/${id}/`;
 
    return this.http.delete<Endereco>(url);
   }
